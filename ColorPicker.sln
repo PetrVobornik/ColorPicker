@@ -3,14 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorPicker.PCL", "ColorPicker\ColorPicker.PCL.csproj", "{BEE583D9-4271-412D-9B13-3D584F0D4CC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorPicker.PCL", "src\ColorPicker.PCL.csproj", "{BEE583D9-4271-412D-9B13-3D584F0D4CC4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColorPicker.NS", "ColorPicker\ColorPicker.NS.csproj", "{A0B72722-3B20-4970-BFE6-0E8B02DF0DF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColorPicker.NS", "src\ColorPicker.NS.csproj", "{A0B72722-3B20-4970-BFE6-0E8B02DF0DF7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{83C0336B-7424-4382-A24F-91C094794E40}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\ColorPicker.nuspec = .nuget\ColorPicker.nuspec
-	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1AAA6BE5-F64E-4A4E-9EB5-58F77F2BC06F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{9CB1EE17-F73C-4A1B-ADA5-F793280BE090}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +28,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BEE583D9-4271-412D-9B13-3D584F0D4CC4} = {1AAA6BE5-F64E-4A4E-9EB5-58F77F2BC06F}
+		{A0B72722-3B20-4970-BFE6-0E8B02DF0DF7} = {1AAA6BE5-F64E-4A4E-9EB5-58F77F2BC06F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4C7079F2-033F-45FC-8881-A33BE83246BA}

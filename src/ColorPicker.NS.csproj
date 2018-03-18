@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <AssemblyName>Amporis.Xamarin.Forms.ColorPicker</AssemblyName>
+    <RootNamespace>Amporis.Xamarin.Forms.ColorPicker</RootNamespace>
+    <Description>Color picker for Xamarin.Forms. It can be used as a large color mixer control (ColorPickerMixer) or as a dialog for select a color (ColorPickerDialog) or as an entry editor (ColorPickerEntry) of hexadecimal value with preview of a color and option of launch a dialog with color mixer.</Description>
+    <Authors>Petr Vobornik</Authors>
+    <Company>Amporis, s.r.o.</Company>
+    <Product>ColorPicker</Product>
+    <Copyright>Copyright 2018 Amporis, s.r.o.</Copyright>
+    <PackageTags>Xamarin Forms Color Picker ColorPicker</PackageTags>
+    <AssemblyVersion>1.0.20.0</AssemblyVersion>
+    <FileVersion>1.0.20.0</FileVersion>
+    <PackageProjectUrl>https://github.com/PetrVobornik/ColorPicker</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/PetrVobornik/ColorPicker/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl></RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ColorPicker.PCL.nuget.targets" />
+    <None Remove="packages.config" />
+    <None Remove="project.json" />
+    <None Remove="project.lock.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>

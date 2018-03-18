@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Amporis.Xamarin.Forms.ColorPicker.ColorPickerEntry">
+    <ContentView.Content>
+        <Grid x:Name="gMain" Padding="0"> 
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" /> 
+                <ColumnDefinition Width="Auto" />  
+            </Grid.ColumnDefinitions>
+            <Entry x:Name="eColor" Text="{Binding Hexa}" Margin="0" />
+            <Button x:Name="bEdit" BackgroundColor="{Binding Value}" Grid.Column="1"
+                    Clicked="bEdit_Clicked" Margin="0" HorizontalOptions="Start" WidthRequest="30" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>
