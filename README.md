@@ -10,9 +10,9 @@ Color picker controls for Xamarin.Forms. It can be used as a large color mixer c
 
 |Platform|Version|
 | ------------------- | :------------------: |
-|Xamarin.iOS|iOS 8+|
-|Xamarin.Android|API 14+|
 |Windows 10 UWP|10+|
+|Xamarin.Android|API 14+|
+|Xamarin.iOS|iOS 8+|
 
 ## License
 Licensed under MIT license
