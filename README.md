@@ -57,7 +57,7 @@ var color = await ColorPickerDialog.Show(gMain, "Choose color", Color.White, nul
              x:Class="ColorPicker.Sample.MainPage">
     <Grid x:Name="gMain">
         <StackLayout Spacing="30" HorizontalOptions="Center" VerticalOptions="Center">
-            <cp:ColorPickerEntry x:Name="cpEntry" HorizontalOptions="Start" />
+            <cp:ColorPickerEntry x:Name="cpEntry" />
             <cp:ColorPickerMixer x:Name="cpMixer" />
         </StackLayout>
     </Grid>
@@ -65,5 +65,12 @@ var color = await ColorPickerDialog.Show(gMain, "Choose color", Color.White, nul
 ```
 
 ```csharp
-cpEntry.RootContainer = gMain;
+public partial class MainPage : ContentPage
+{
+	 public MainPage()
+	 {
+		  InitializeComponent();
+    cpEntry.RootContainer = gMain;
+  }
+}
 ```
