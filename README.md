@@ -18,10 +18,6 @@ Color picker was tested as NuGet in shared PCL library with these platforms:
 |Xamarin.iOS|iOS 8+|
 
 
-## License
-Licensed under MIT license
-
-
 ## Usage
 
 ### ColorPickerDialog
@@ -33,7 +29,7 @@ var color = await ColorPickerDialog.Show(gMain, "Choose color", Color.White, nul
 * **parent** (gMain) - root container (Layout<View>) on the page, where a modal dialog will be temporarily placed
 * **title** ("Choose color") - caption in the header of the dialog
 * **defaultColor** (Color.White) - preselected color
-* **settings** (null) - dialog settings - class ColorDialogSettings with these properties and its default values
+* **settings** (null) - dialog settings - class **ColorDialogSettings** with these properties and its default values
   * BackgroundColor (#40000000) - color of the panel below dialog which temporarily covers other controls on the page (using partial transparency)
   * DialogColor (#FFFFFFFF)
   * TextColor (#FF000000)
@@ -56,21 +52,10 @@ var color = await ColorPickerDialog.Show(gMain, "Choose color", Color.White, nul
              xmlns:cp="clr-namespace:Amporis.Xamarin.Forms.ColorPicker;assembly=Amporis.Xamarin.Forms.ColorPicker"
              x:Class="ColorPicker.Sample.MainPage">
     <Grid x:Name="gMain">
-        <StackLayout Spacing="30" HorizontalOptions="Center" VerticalOptions="Center">
+        <StackLayout Spacing="30">
             <cp:ColorPickerEntry x:Name="cpEntry" />
             <cp:ColorPickerMixer x:Name="cpMixer" />
         </StackLayout>
     </Grid>
 </ContentPage>
-```
-
-```csharp
-public partial class MainPage : ContentPage
-{
-    public MainPage()
-    {
-        InitializeComponent();
-        **cpEntry.RootContainer = gMain;**
-    }
-}
 ```
