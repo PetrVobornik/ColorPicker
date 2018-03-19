@@ -26,11 +26,11 @@ Licensed under MIT license
 
 ### ColorPickerDialog
 ```csharp
-var color = await ColorPickerDialog.Show(MainGrid, "Choose color", Color.White, null);
+var color = await ColorPickerDialog.Show(gMain, "Choose color", Color.White, null);
 ```
 
 **Parameters**
-* **parent** (MainGird) - root container (Layout<View>) on the page, where a modal dialog will be temporarily placed
+* **parent** (gMain) - root container (Layout<View>) on the page, where a modal dialog will be temporarily placed
 * **title** ("Choose color") - caption in the header of the dialog
 * **defaultColor** (Color.White) - preselected color
 * **settings** (null) - dialog settings - class ColorDialogSettings with these properties and its default values
@@ -48,7 +48,22 @@ var color = await ColorPickerDialog.Show(MainGrid, "Choose color", Color.White, 
   * EditAlfa (true)
 
 
-### ColorPickerMixer
+### ColorPickerEntry and ColorPickerMixer
 ```xml
-<cp:ColorPickerMixer>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ColorPicker.Sample"
+             xmlns:cp="clr-namespace:Amporis.Xamarin.Forms.ColorPicker;assembly=Amporis.Xamarin.Forms.ColorPicker"
+             x:Class="ColorPicker.Sample.MainPage">
+    <Grid x:Name="gMain">
+        <StackLayout Spacing="30" HorizontalOptions="Center" VerticalOptions="Center">
+            <cp:ColorPickerEntry x:Name="cpEntry" HorizontalOptions="Start" />
+            <cp:ColorPickerMixer x:Name="cpMixer" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
+```
+
+```csharp
+cpEntry.RootContainer = gMain;
 ```
