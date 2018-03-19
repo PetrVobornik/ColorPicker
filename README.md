@@ -30,15 +30,15 @@ var color = await ColorPickerDialog.Show(MainGrid, "Choose color", Color.White, 
 ```
 
 **Parameters**
-* **parent** (MainGird) - root container on the page, where a modal dialog will be temporarily placed
+* **parent** (MainGird) - root container (Layout<View>) on the page, where a modal dialog will be temporarily placed
 * **title** ("Choose color") - caption in the header of the dialog
 * **defaultColor** (Color.White) - preselected color
 * **settings** (null) - dialog settings - class ColorDialogSettings with these properties and its default values
-  * BackgroundColor (#40000000)
+  * BackgroundColor (#40000000) - color of the panel below dialog which temporarily covers other controls on the page (using partial transparency)
   * DialogColor (#FFFFFFFF)
   * TextColor (#FF000000)
-  * OkButtonText (OK)
-  * CancelButtonText (Cancel)
+  * OkButtonText ("OK")
+  * CancelButtonText ("Cancel")
   * DialogAnimation (true)
   * EditorsColor (#FFFFFFFF)
   * ColorPreviewBorderColor (#00FFFFFF)
@@ -46,3 +46,9 @@ var color = await ColorPickerDialog.Show(MainGrid, "Choose color", Color.White, 
   * ARGBEditorsWidth (65)
   * ColorEditorWidth (120)
   * EditAlfa (true)
+
+
+### ColorPickerMixer
+```xml
+<cp:ColorPickerMixer>
+```
