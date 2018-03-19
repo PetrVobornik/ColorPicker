@@ -25,9 +25,9 @@ Licensed under MIT license
 
 ## Usage
 
-###ColorPickerDialog
+### ColorPickerDialog
 ```csharp
-var color = await ColorPickerDialog.Show(MainGrid, "Choose color", Color.White);
+var color = await ColorPickerDialog.Show(MainGrid, "Choose color", Color.White, null);
 ```
 
 **Parameters**
@@ -35,15 +35,15 @@ var color = await ColorPickerDialog.Show(MainGrid, "Choose color", Color.White);
 * title ("Choose color") - caption in the header of the dialog
 * defaultColor (Color.White) - preselected color
 * settings (null) - dialog settings - class ColorDialogSettings with these properties
-** BackgroundColor
-** DialogColor
-** TextColor
-** OkButtonText
-** CancelButtonText
-** DialogAnimation
-** EditorsColor
-** ColorPreviewBorderColor
-** SliderWidth
-** ARGBEditorsWidth
-** ColorEditorWidth
-** EditAlfa
+  * BackgroundColor
+  * DialogColor
+  * TextColor
+  * OkButtonText
+  * CancelButtonText
+  * DialogAnimation
+  * EditorsColor
+  * ColorPreviewBorderColor
+  * SliderWidth
+  * ARGBEditorsWidth
+  * ColorEditorWidth
+  * EditAlfa
