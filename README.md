@@ -59,3 +59,18 @@ var color = await ColorPickerDialog.Show(gMain, "Choose color", Color.White, nul
     </Grid>
 </ContentPage>
 ```
+
+There are also these properties:
+**ColorPickerEntry**
+* Color (BindableProperty) 
+* ShowColorPreview
+* ColorPreviewButtonWidth
+* AllowPickerDialog
+* DialogTitle
+* DialogSettings (class ColorDialogSettings)
+* RootContainer - parent container for dialog, if is null then will be found automatically
+* Editor (read only) - reference for Entry where a hexadecimal color value is edited
+* PreviewButtonClicked (even)
+
+**ColorPickerMixer**
+* Color (BindableProperty)
