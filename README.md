@@ -67,9 +67,9 @@ var color = await ColorPickerDialog.Show(gMain, "Choose color", Color.White, nul
 ```csharp
 public partial class MainPage : ContentPage
 {
-	 public MainPage()
-	 {
-		  InitializeComponent();
+  public MainPage()
+  {
+    InitializeComponent();
     cpEntry.RootContainer = gMain;
   }
 }
