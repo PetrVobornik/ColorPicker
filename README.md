@@ -1,3 +1,4 @@
+
 # Color picker for Xamarin.Forms
 Color picker control for Xamarin.Forms. It can be used as a large color mixer control (ColorPickerMixer) or as a dialog for select a color (ColorPickerDialog) or as an entry editor (ColorPickerEntry) of hexadecimal value with preview of a color and option of launch a dialog with color mixer.
 
@@ -20,3 +21,29 @@ Color picker was tested as NuGet in shared PCL library with these platforms:
 
 ## License
 Licensed under MIT license
+
+
+## Usage
+
+###ColorPickerDialog
+```csharp
+var color = await ColorPickerDialog.Show(MainGrid, "Choose color", Color.White);
+```
+
+**Parameters**
+* parent (MainGird) - root container on the page, where a modal dialog will be temporarily placed
+* title ("Choose color") - caption in the header of the dialog
+* defaultColor (Color.White) - preselected color
+* settings (null) - dialog settings - class ColorDialogSettings with these properties
+** BackgroundColor
+** DialogColor
+** TextColor
+** OkButtonText
+** CancelButtonText
+** DialogAnimation
+** EditorsColor
+** ColorPreviewBorderColor
+** SliderWidth
+** ARGBEditorsWidth
+** ColorEditorWidth
+** EditAlfa
