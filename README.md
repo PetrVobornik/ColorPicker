@@ -69,7 +69,7 @@ There are also these properties:
 * ColorPreviewButtonWidth
 * AllowPickerDialog
 * DialogTitle
-* DialogSettings (class ColorDialogSettings)
+* DialogSettings (class **ColorDialogSettings**, see above)
 * RootContainer - parent container for dialog, if is null then will be found automatically
 * Editor (read only) - reference for Entry where a hexadecimal color value is edited
 * PreviewButtonClicked (event) - has argument class PreviewButtonClickedEventArgs with these properties:
@@ -78,10 +78,10 @@ There are also these properties:
 
 **ColorPickerMixer**
 * Color (BindableProperty)
+* EditAlfa
 * TextColor
 * EditorsColor
 * ColorPreviewBorderColor
 * SliderWidth
 * ARGBEditorsWidth
 * ColorEditorWidth
-* EditAlfa
