@@ -21,7 +21,11 @@ Color picker was tested as NuGet in shared PCL library with these platforms:
 ## Usage
 
 ### ColorPickerEntry and ColorPickerMixer
-```xml
+
+![ColorPickerEntry and ColorPickerMixer on Android](https://github.com/PetrVobornik/ColorPicker/images/colorpicker-android-entry-mixer.png "ColorPickerEntry and ColorPickerMixer on Android")
+
+**XAML**
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -38,6 +42,25 @@ Color picker was tested as NuGet in shared PCL library with these platforms:
         </StackLayout>
     </Grid>
 </ContentPage>
+```
+
+**C#**
+```csharp
+public partial class MainPage : ContentPage
+{
+    public MainPage()
+    {
+        InitializeComponent();
+        gMain.BindingContext = this;
+    }
+
+    private Color editedColor;
+
+    public Color EditedColor {
+        get => editedColor;
+        set { editedColor = value; OnPropertyChanged(); }
+    }
+}
 ```
 
 There are also these properties:
