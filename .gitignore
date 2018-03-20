@@ -154,6 +154,7 @@ PublishScripts/
 # NuGet Packages
 .nuget/
 *.nupkg
+*.nuspec
 # The packages folder can be ignored because of Package Restore
 **/packages/*
 # except build/, which is used as an MSBuild target.
@@ -260,4 +261,4 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
-/src.zip
+/*.zip
