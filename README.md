@@ -22,7 +22,8 @@ Color picker was tested as NuGet in shared PCL library with these platforms:
 
 ### ColorPickerEntry and ColorPickerMixer
 
-<img src="https://raw.githubusercontent.com/PetrVobornik/ColorPicker/master/images/colorpicker-android-entry-mixer.png?raw=true" alt="ColorPickerEntry and ColorPickerMixer on Android" title="ColorPickerEntry and ColorPickerMixer on Android" width="45%" /> <img src="https://raw.githubusercontent.com/PetrVobornik/ColorPicker/master/images/colorpicker-uwp-entry-mixer.png?raw=true" alt="ColorPickerEntry and ColorPickerMixer on Windows (UWP)" title="ColorPickerEntry and ColorPickerMixer on Windows (UWP)" width="52%" style="float: right;" />
+<img src="https://raw.githubusercontent.com/PetrVobornik/ColorPicker/master/images/colorpicker-android-entry-mixer.png?raw=true" alt="ColorPickerEntry and ColorPickerMixer on Android" title="ColorPickerEntry and ColorPickerMixer on Android" width="45%" />
+<img src="https://raw.githubusercontent.com/PetrVobornik/ColorPicker/master/images/colorpicker-uwp-entry-mixer.png?raw=true" alt="ColorPickerEntry and ColorPickerMixer on Windows (UWP)" title="ColorPickerEntry and ColorPickerMixer on Windows (UWP)" width="52%" style="float: right;" />
 
 
 **XAML**
