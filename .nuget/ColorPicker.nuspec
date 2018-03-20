@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Amporis.Xamarin.Forms.ColorPicker</id>
-    <version>1.0.20</version>
+    <version>1.0.21</version>
     <title>Amporis.Xamarin.Forms.ColorPicker</title>
     <authors>Petr Vobornik</authors>
     <owners>Amporis, s.r.o.</owners>
@@ -19,13 +19,9 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\src\bin\Release\PCL\Amporis.Xamarin.Forms.ColorPicker.dll" 
-          target="lib\portable-win+net45+wp80+win81+wpa81\Amporis.Xamarin.Forms.ColorPicker.dll" />
-    <file src="..\src\bin\Release\PCL\Amporis.Xamarin.Forms.ColorPicker.pdb"
-          target="lib\portable-win+net45+wp80+win81+wpa81\Amporis.Xamarin.Forms.ColorPicker.pdb" />
-    <file src="..\src\bin\Release\netstandard1.0\Amporis.Xamarin.Forms.ColorPicker.dll"
-          target="lib\netstandard1.0\Amporis.Xamarin.Forms.ColorPicker.dll" />
-    <file src="..\src\bin\Release\netstandard1.0\Amporis.Xamarin.Forms.ColorPicker.pdb"
-          target="lib\netstandard1.0\Amporis.Xamarin.Forms.ColorPicker.pdb" />
+    <file src="..\src\bin\Release\PCL\*.dll" target="lib\portable-win+net45+wp80+win81+wpa81" />
+    <file src="..\src\bin\Release\PCL\*.pdb" target="lib\portable-win+net45+wp80+win81+wpa81" />
+    <file src="..\src\bin\Release\netstandard1.0\*.dll" target="lib\netstandard1.0" />
+    <file src="..\src\bin\Release\netstandard1.0\*.pdb" target="lib\netstandard1.0" />
   </files>
 </package>
