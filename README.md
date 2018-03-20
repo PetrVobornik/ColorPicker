@@ -72,7 +72,9 @@ There are also these properties:
 * DialogSettings (class ColorDialogSettings)
 * RootContainer - parent container for dialog, if is null then will be found automatically
 * Editor (read only) - reference for Entry where a hexadecimal color value is edited
-* PreviewButtonClicked (event)
+* PreviewButtonClicked (event) - has argument class PreviewButtonClickedEventArgs with these properties:
+  * Color - current color which you can change to another by the event
+  * Handled - if you set it to true, dialog will not be shown
 
 **ColorPickerMixer**
 * Color (BindableProperty)
