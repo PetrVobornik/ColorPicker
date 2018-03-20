@@ -94,6 +94,10 @@ There are also these properties:
 
 
 ### ColorPickerDialog
+
+<img src="https://raw.githubusercontent.com/PetrVobornik/ColorPicker/master/images/colorpicker-android-dialog.png?raw=true" alt="ColorPickerDialog on Android" title="ColorPickerDialog on Android" width="45%" />&nbsp;<img src="https://raw.githubusercontent.com/PetrVobornik/ColorPicker/master/images/colorpicker-uwp-dialog.png?raw=true" alt="ColorPickerDialog on Windows (UWP)" title="ColorPickerDialog on Windows (UWP)" width="52%" />
+
+**C#**
 ```csharp
 var color = await ColorPickerDialog.Show(gMain, "Choose color", Color.White, null);
 ```
