@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Amporis.Xamarin.Forms.ColorPicker.ColorPickerEntry">
     <ContentView.Content>
-        <Grid x:Name="gMain" Padding="0"> 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" /> 
-                <ColumnDefinition Width="Auto" />  
-            </Grid.ColumnDefinitions>
-            <Entry x:Name="eColor" Text="{Binding Hexa}" Margin="0" />
-            <Button x:Name="bEdit" BackgroundColor="{Binding Value}" Grid.Column="1"
-                    Clicked="bEdit_Clicked" Margin="0" HorizontalOptions="Start" WidthRequest="30" />
-        </Grid>
+        <StackLayout x:Name="sLayout" Orientation="Horizontal" Spacing="5">
+            <Entry x:Name="eColor" Text="{Binding Hexa}" Margin="0" 
+                   HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
+            <Frame x:Name="fEdit" Margin="0" HorizontalOptions="End" WidthRequest="30" 
+                   VerticalOptions="Fill" OutlineColor="Black" Padding="0">
+                <Button x:Name="bEdit" BackgroundColor="{Binding Value}" HorizontalOptions="Fill" VerticalOptions="Fill"
+                        Clicked="bEdit_Clicked" Margin="-1"  />
+            </Frame>
+        </StackLayout>
     </ContentView.Content>
 </ContentView>

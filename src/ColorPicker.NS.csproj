@@ -10,11 +10,12 @@
     <Product>ColorPicker</Product>
     <Copyright>Copyright 2018 Amporis, s.r.o.</Copyright>
     <PackageTags>Xamarin Forms Color Picker ColorPicker</PackageTags>
-    <AssemblyVersion>1.0.20.0</AssemblyVersion>
-    <FileVersion>1.0.20.0</FileVersion>
+    <AssemblyVersion>1.0.21.0</AssemblyVersion>
+    <FileVersion>1.0.21.0</FileVersion>
     <PackageProjectUrl>https://github.com/PetrVobornik/ColorPicker</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/PetrVobornik/ColorPicker/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl></RepositoryUrl>
+    <Version>1.0.21</Version>
   </PropertyGroup>
 
   <ItemGroup>

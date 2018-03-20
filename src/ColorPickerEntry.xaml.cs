@@ -35,7 +35,7 @@ namespace Amporis.Xamarin.Forms.ColorPicker
         {
             InitializeComponent();
             eColor.BindingContext = ColorVal;
-            bEdit.BindingContext = ColorVal;
+            fEdit.BindingContext = ColorVal;
             ColorVal.PropertyChanged += ColorVal_PropertyChanged;
         }
 
@@ -64,7 +64,18 @@ namespace Amporis.Xamarin.Forms.ColorPicker
         /// <summary>
         /// Width of the color preview button
         /// </summary>
-        public double ColorPreviewButtonWidth { get => bEdit.WidthRequest; set => bEdit.WidthRequest = value; }
+        public double ColorPreviewButtonWidth { get => fEdit.WidthRequest; set => fEdit.WidthRequest = value; }
+
+        /// <summary>
+        /// Color of the color preview button border
+        /// </summary>
+        public Color ColorPreviewButtonBorder { get => fEdit.OutlineColor; set { fEdit.OutlineColor = value; } }
+
+        /// <summary>
+        /// Space between editor and button
+        /// </summary>
+        public double SpaceBetweenEditorAndButton { get => sLayout.Spacing; set => sLayout.Spacing = value; }
+        
 
         /// <summary>
         /// Show modal dialog (<see cref="ColorPickerDialog"/>) with color mixer (<see cref="ColorPickerMixer"/>) when click to the color preview button

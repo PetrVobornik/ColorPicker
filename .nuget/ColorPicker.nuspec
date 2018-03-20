@@ -3,7 +3,7 @@
   <metadata>
     <id>Amporis.Xamarin.Forms.ColorPicker</id>
     <version>1.0.20</version>
-    <title>ColorPicker</title>
+    <title>Amporis.Xamarin.Forms.ColorPicker</title>
     <authors>Petr Vobornik</authors>
     <owners>Amporis, s.r.o.</owners>
     <licenseUrl>https://github.com/PetrVobornik/ColorPicker/blob/master/LICENSE</licenseUrl>
