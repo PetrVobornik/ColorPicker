@@ -1,4 +1,4 @@
-# Color picker for Xamarin.Forms
+ Color picker for Xamarin.Forms
 Color picker control for Xamarin.Forms. It can be used as a large color mixer control (ColorPickerMixer) or as a dialog for select a color (ColorPickerDialog) or as an entry editor (ColorPickerEntry) of hexadecimal value with preview of a color and option of launch a dialog with color mixer.
 
 
@@ -22,8 +22,7 @@ Color picker was tested as NuGet in shared PCL library with these platforms:
 
 ### ColorPickerEntry and ColorPickerMixer
 
-<img src="https://raw.githubusercontent.com/PetrVobornik/ColorPicker/master/images/colorpicker-android-entry-mixer.png?raw=true" alt="ColorPickerEntry and ColorPickerMixer on Android" title="ColorPickerEntry and ColorPickerMixer on Android" width="45%" />
-<img src="https://raw.githubusercontent.com/PetrVobornik/ColorPicker/master/images/colorpicker-uwp-entry-mixer.png?raw=true" alt="ColorPickerEntry and ColorPickerMixer on Windows (UWP)" title="ColorPickerEntry and ColorPickerMixer on Windows (UWP)" width="52%" style="float: right;" />
+<img src="https://raw.githubusercontent.com/PetrVobornik/ColorPicker/master/images/colorpicker-android-entry-mixer.png?raw=true" alt="ColorPickerEntry and ColorPickerMixer on Android" title="ColorPickerEntry and ColorPickerMixer on Android" width="45%" /> <img src="https://raw.githubusercontent.com/PetrVobornik/ColorPicker/master/images/colorpicker-uwp-entry-mixer.png?raw=true" alt="ColorPickerEntry and ColorPickerMixer on Windows (UWP)" title="ColorPickerEntry and ColorPickerMixer on Windows (UWP)" width="54%" style="float: right;" />
 
 
 **XAML**
@@ -95,7 +94,7 @@ There are also these properties:
 
 ### ColorPickerDialog
 
-<img src="https://raw.githubusercontent.com/PetrVobornik/ColorPicker/master/images/colorpicker-android-dialog.png?raw=true" alt="ColorPickerDialog on Android" title="ColorPickerDialog on Android" width="45%" />&nbsp;<img src="https://raw.githubusercontent.com/PetrVobornik/ColorPicker/master/images/colorpicker-uwp-dialog.png?raw=true" alt="ColorPickerDialog on Windows (UWP)" title="ColorPickerDialog on Windows (UWP)" width="52%" />
+<img src="https://raw.githubusercontent.com/PetrVobornik/ColorPicker/master/images/colorpicker-android-dialog.png?raw=true" alt="ColorPickerDialog on Android" title="ColorPickerDialog on Android" width="45%" /> <img src="https://raw.githubusercontent.com/PetrVobornik/ColorPicker/master/images/colorpicker-uwp-dialog.png?raw=true" alt="ColorPickerDialog on Windows (UWP)" title="ColorPickerDialog on Windows (UWP)" width="54%" style="float: right;" />
 
 **C#**
 ```csharp
