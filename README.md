@@ -36,8 +36,7 @@ Color picker was tested as NuGet in shared PCL library with these platforms:
     <Grid x:Name="gMain">
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <Label Text="ColorPickerEntry" Margin="0,0,0,10" />
-            <cp:ColorPickerEntry WidthRequest="150" HorizontalOptions="Start" 
-                                 DialogTitle="ColorPickerDialog" Color="{Binding EditedColor}" />            
+            <cp:ColorPickerEntry WidthRequest="150" HorizontalOptions="Start" Color="{Binding EditedColor}" />            
             <Label Text="ColorPickerMixer" Margin="0,30,0,10" />
             <cp:ColorPickerMixer Color="{Binding EditedColor}" />
         </StackLayout>
