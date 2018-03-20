@@ -22,7 +22,7 @@ Color picker was tested as NuGet in shared PCL library with these platforms:
 
 ### ColorPickerEntry and ColorPickerMixer
 
-![ColorPickerEntry and ColorPickerMixer on Android](https://github.com/PetrVobornik/ColorPicker/images/colorpicker-android-entry-mixer.png?raw=true "ColorPickerEntry and ColorPickerMixer on Android")
+![ColorPickerEntry and ColorPickerMixer on Android](https://raw.githubusercontent.com/PetrVobornik/ColorPicker/master/images/colorpicker-android-entry-mixer.png?raw=true "ColorPickerEntry and ColorPickerMixer on Android")
 
 **XAML**
 ```xaml
