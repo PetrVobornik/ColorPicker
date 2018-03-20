@@ -61,8 +61,10 @@ var color = await ColorPickerDialog.Show(gMain, "Choose color", Color.White, nul
 ```
 
 There are also these properties:
+
 **ColorPickerEntry**
 * Color (BindableProperty) 
+* EditAlfa
 * ShowColorPreview
 * ColorPreviewButtonWidth
 * AllowPickerDialog
@@ -70,7 +72,14 @@ There are also these properties:
 * DialogSettings (class ColorDialogSettings)
 * RootContainer - parent container for dialog, if is null then will be found automatically
 * Editor (read only) - reference for Entry where a hexadecimal color value is edited
-* PreviewButtonClicked (even)
+* PreviewButtonClicked (event)
 
 **ColorPickerMixer**
 * Color (BindableProperty)
+* TextColor
+* EditorsColor
+* ColorPreviewBorderColor
+* SliderWidth
+* ARGBEditorsWidth
+* ColorEditorWidth
+* EditAlfa
