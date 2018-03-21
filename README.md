@@ -1,6 +1,6 @@
 # <img src="https://raw.githubusercontent.com/PetrVobornik/ColorPicker/master/images/colorpicker-icon.png?raw=true" alt="ColorPicker" width="32" /> Color picker for Xamarin.Forms 
 Color picker control for Xamarin.Forms. It can be used as a large color mixer control (ColorPickerMixer) or as a dialog for select a color (ColorPickerDialog) or as an entry editor (ColorPickerEntry) of hexadecimal value with preview of a color and option of launch a dialog with color mixer.
-
+https://raw.githubusercontent.com/PetrVobornik/ColorPicker/master/README.md?raw=true
 
 ## NuGet
 * Available on NuGet: https://www.nuget.org/packages/Amporis.Xamarin.Forms.ColorPicker/ [![NuGet](https://img.shields.io/nuget/v/Amporis.Xamarin.Forms.ColorPicker.svg?label=NuGet)](https://www.nuget.org/packages/Amporis.Xamarin.Forms.ColorPicker/)
@@ -98,12 +98,12 @@ There are also these properties:
 
 **C#**
 ```csharp
-var color = await ColorPickerDialog.Show(gMain, "Choose color", Color.White, null);
+var color = await ColorPickerDialog.Show(gMain, "ColorPickerDialog", Color.White, null);
 ```
 
 **Parameters**
 * **parent** (gMain) - root container (Layout<View>) on the page, where a modal dialog will be temporarily placed
-* **title** ("Choose color") - caption in the header of the dialog
+* **title** ("ColorPickerDialog") - caption in the header of the dialog
 * **defaultColor** (Color.White) - preselected color
 * **settings** (null) - dialog settings - class **ColorDialogSettings** with these properties and its default values
   * BackgroundColor (#40000000) - color of the panel below dialog which temporarily covers other controls on the page (using partial transparency)
