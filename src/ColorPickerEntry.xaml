@@ -26,9 +26,11 @@
                x:Name="bEdit"
                Margin="-1"
                BackgroundColor="{Binding Value}"
+               BorderColor="{Binding Value}"
                Clicked="bEdit_Clicked"
                HorizontalOptions="Fill"
-               VerticalOptions="Fill" />
+               VerticalOptions="Fill"
+               WidthRequest="75" />
          </Frame>
       </StackLayout>
    </ContentView.Content>

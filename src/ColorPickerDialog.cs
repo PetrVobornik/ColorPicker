@@ -174,6 +174,8 @@ namespace Amporis.Xamarin.Forms.ColorPicker
          HorizontalOptions = LayoutOptions.Fill;
          VerticalOptions = LayoutOptions.Fill;
          BackgroundColor = Settings.BackgroundColor;
+         Margin = new Thickness(-20);
+         Padding = new Thickness(20);
 
          MainFrame = new Frame()
          {
@@ -188,23 +190,28 @@ namespace Amporis.Xamarin.Forms.ColorPicker
          MainConteiner = new StackLayout() { Orientation = StackOrientation.Vertical };
          MainFrame.Content = MainConteiner;
 
-         // Title
-         stlTitle = new StackLayout() { Orientation = StackOrientation.Horizontal, Margin = new Thickness(0, 0, 0, 10), HorizontalOptions = LayoutOptions.Fill };
-         MainConteiner.Children.Add(stlTitle);
-         lblTitle = new Label();
-         lblTitle.FontSize *= 1.5;
-         lblTitle.VerticalOptions = LayoutOptions.Center;
-         lblTitle.Text = Title;
-         lblTitle.TextColor = Settings.TextColor;
-         stlTitle.Children.Add(lblTitle);
+         if (!string.IsNullOrEmpty(Title))
+         {
+            // Title
+            stlTitle = new StackLayout() { Orientation = StackOrientation.Horizontal, Margin = new Thickness(0, 0, 0, 10), HorizontalOptions = LayoutOptions.Fill };
+            MainConteiner.Children.Add(stlTitle);
+            lblTitle = new Label();
+            lblTitle.FontSize *= 1.5;
+            lblTitle.VerticalOptions = LayoutOptions.Center;
+            lblTitle.Text = Title;
+            lblTitle.TextColor = Settings.TextColor;
+            stlTitle.Children.Add(lblTitle);
+         }
 
          // Buttons (container)
-         stlButtons = new StackLayout();
-         stlButtons.HorizontalOptions = LayoutOptions.End;
-         stlButtons.Orientation = StackOrientation.Horizontal;
+         stlButtons = new StackLayout
+         {
+            HorizontalOptions = LayoutOptions.End,
+            Orientation = StackOrientation.Horizontal
+         };
 
          // Button OK
-         if (!String.IsNullOrEmpty(Settings.OkButtonText))
+         if (!string.IsNullOrEmpty(Settings.OkButtonText))
          {
             btnOk = new Button();
             btnOk.Clicked += Btn_Clicked;
@@ -213,7 +220,7 @@ namespace Amporis.Xamarin.Forms.ColorPicker
          }
 
          // Button Cancel
-         if (!String.IsNullOrEmpty(Settings.CancelButtonText))
+         if (!string.IsNullOrEmpty(Settings.CancelButtonText))
          {
             if (btnOk != null)
                btnOk.Margin = new Thickness(0, 0, 10, 0);
