@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-using XF = Xamarin.Forms;
+﻿using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -23,6 +15,7 @@ namespace Amporis.Xamarin.Forms.ColorPicker
          InitializeComponent();
          eColor.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeSentence);
          gMain.BindingContext = this;
+
          ColorVal.PropertyChanged += (s, e) =>
          {
             switch (e.PropertyName)
@@ -40,9 +33,9 @@ namespace Amporis.Xamarin.Forms.ColorPicker
 
       #region Settings 
 
-      private Color textColor = XF.Color.Black;
-      private Color editorsColor = XF.Color.White;
-      private Color colorPreviewBorderColor = XF.Color.Black;
+      private Color textColor = Color.Black;
+      private Color editorsColor = Color.White;
+      private Color colorPreviewBorderColor = Color.Black;
       private double sliderWidth = 256;
       private double aRGBEditorsWidth = 65;
       private double colorEditorWidth = 120;
@@ -50,9 +43,6 @@ namespace Amporis.Xamarin.Forms.ColorPicker
       public Color TextColor { get => textColor; set { textColor = value; ValueChanged(); } }
       public Color EditorsColor { get => editorsColor; set { editorsColor = value; ValueChanged(); } }
       public Color ColorPreviewBorderColor { get => colorPreviewBorderColor; set { colorPreviewBorderColor = value; ValueChanged(); } }
-      public double SliderWidth { get => sliderWidth; set { sliderWidth = value; ValueChanged(); } }
-      public double ARGBEditorsWidth { get => aRGBEditorsWidth; set { aRGBEditorsWidth = value; ValueChanged(); } }
-      public double ColorEditorWidth { get => colorEditorWidth; set { colorEditorWidth = value; ValueChanged(); } }
       public bool EditAlpha { get => ColorVal.EditAlpha; set { ColorVal.EditAlpha = value; ColorVal.EditAlpha = value; ValueChanged(); } }
 
       #endregion

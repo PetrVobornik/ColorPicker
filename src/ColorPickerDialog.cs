@@ -66,9 +66,6 @@ namespace Amporis.Xamarin.Forms.ColorPicker
             TextColor = settings.TextColor,
             EditorsColor = settings.EditorsColor,
             ColorPreviewBorderColor = settings.ColorPreviewBorderColor,
-            SliderWidth = settings.SliderWidth,
-            ARGBEditorsWidth = settings.ARGBEditorsWidth,
-            ColorEditorWidth = settings.ColorEditorWidth,
             EditAlpha = settings.EditAlfa,
          };
          colorEditor.Color = originalColor;
@@ -96,9 +93,6 @@ namespace Amporis.Xamarin.Forms.ColorPicker
    {
       public Color EditorsColor { get; set; } = Color.White;
       public Color ColorPreviewBorderColor { get; set; }
-      public double SliderWidth { get; set; } = 256;
-      public double ARGBEditorsWidth { get; set; } = 65;
-      public double ColorEditorWidth { get; set; } = 120;
       public bool EditAlfa { get; set; } = true;
    }
 
@@ -185,6 +179,16 @@ namespace Amporis.Xamarin.Forms.ColorPicker
             Padding = new Thickness(16),
             HasShadow = true,
          };
+
+         switch(Device.Idiom)
+         {
+            case TargetIdiom.Tablet:
+            case TargetIdiom.Desktop:
+               MainFrame.WidthRequest = 300;
+               break;
+         }
+            
+
          Children.Add(MainFrame);
 
          MainConteiner = new StackLayout() { Orientation = StackOrientation.Vertical };
