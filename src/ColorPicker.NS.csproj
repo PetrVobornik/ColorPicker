@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Amporis.Xamarin.Forms.ColorPicker</AssemblyName>
+    <AssemblyName>Xam.Plugin.SimpleColorPicker</AssemblyName>
     <RootNamespace>Amporis.Xamarin.Forms.ColorPicker</RootNamespace>
     <Description>Color picker for Xamarin.Forms. It can be used as a large color mixer control (ColorPickerMixer) or as a dialog for select a color (ColorPickerDialog) or as an entry editor (ColorPickerEntry) of hexadecimal value with preview of a color and option of launch a dialog with color mixer.</Description>
     <Authors>Petr Vobornik</Authors>
@@ -15,7 +15,8 @@
     <PackageProjectUrl>https://github.com/PetrVobornik/ColorPicker</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/PetrVobornik/ColorPicker/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl></RepositoryUrl>
-    <Version>1.0.21</Version>
+    <Version>1.0</Version>
+    <PackageId>Xam.Plugin.SimpleColorPicker</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
