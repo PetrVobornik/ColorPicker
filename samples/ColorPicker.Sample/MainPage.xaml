@@ -1,16 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:ColorPicker.Sample"
-             xmlns:cp="clr-namespace:Amporis.Xamarin.Forms.ColorPicker;assembly=Amporis.Xamarin.Forms.ColorPicker"
-             x:Class="ColorPicker.Sample.MainPage">
-    <Grid x:Name="gMain">
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="ColorPickerEntry" Margin="0,0,0,10" />
-            <cp:ColorPickerEntry WidthRequest="150" HorizontalOptions="Start" 
-                                 DialogTitle="ColorPickerDialog" Color="{Binding EditedColor}" />            
-            <Label Text="ColorPickerMixer" Margin="0,30,0,10" />
+<ContentPage
+   x:Class="ColorPicker.Sample.MainPage"
+   xmlns="http://xamarin.com/schemas/2014/forms"
+   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   xmlns:cp="clr-namespace:Amporis.Xamarin.Forms.ColorPicker;assembly=Amporis.Xamarin.Forms.ColorPicker">
+   <Grid x:Name="gMain" Padding="20">
+      <ScrollView>
+         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+            <Label Margin="0,0,0,10" Text="ColorPickerEntry" />
+            <cp:ColorPickerEntry
+               HorizontalOptions="Start"
+               WidthRequest="150"
+               Color="{Binding EditedColor}" />
+            <Label Margin="0,30,0,10" Text="ColorPickerMixer" />
             <cp:ColorPickerMixer Color="{Binding EditedColor}" />
-        </StackLayout>
-    </Grid>
+         </StackLayout>
+      </ScrollView>
+   </Grid>
 </ContentPage>

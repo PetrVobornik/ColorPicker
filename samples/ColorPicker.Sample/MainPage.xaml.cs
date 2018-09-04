@@ -1,25 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace ColorPicker.Sample
 {
-    public partial class MainPage : ContentPage
-    {
-	    public MainPage()
-	    {
-		    InitializeComponent();
-            gMain.BindingContext = this;
-        }
+   public partial class MainPage : ContentPage
+   {
+      /// <summary>
+      /// Constructor
+      /// </summary>
+      public MainPage()
+      {
+         InitializeComponent();
+         gMain.BindingContext = this;
+      }
 
-        private Color editedColor;
+      /// <summary>
+      /// edit color with default value
+      /// </summary>
+      private Color editedColor = Color.FromHex("#FFFF9800");//default value
 
-        public Color EditedColor {
-            get => editedColor;
-            set { editedColor = value; OnPropertyChanged(); }
-        }
-    }
+      /// <summary>
+      /// Edited color property
+      /// </summary>
+      public Color EditedColor
+      {
+         get => editedColor;
+         set { editedColor = value; OnPropertyChanged(); }
+      }
+   }
 }

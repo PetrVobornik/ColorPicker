@@ -1,65 +1,104 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Amporis.Xamarin.Forms.ColorPicker"
-             x:Class="Amporis.Xamarin.Forms.ColorPicker.ColorPickerMixer">
-  <ContentView.Content> 
-        <Grid x:Name="gMain" Padding="0">
-            <Grid.Resources> 
-                <ResourceDictionary>
-                    <local:ByteToStrConverter x:Key="cnvNumber" />
-                    <Style TargetType="Slider">
-                        <Setter Property="Minimum" Value="0" />
-                        <Setter Property="Maximum" Value="255" />
-                        <Setter Property="VerticalOptions" Value="Center" />
-                    </Style>
-                    <Style TargetType="Label">
-                        <Setter Property="VerticalOptions" Value="Center" />
-                        <Setter Property="TextColor" Value="{Binding TextColor}" />
-                    </Style>
-                    <Style TargetType="Entry">
-                        <Setter Property="VerticalOptions" Value="Center" />
-                        <Setter Property="TextColor" Value="{Binding TextColor}" />
-                        <Setter Property="BackgroundColor" Value="{Binding EditorsColor}" />
-                    </Style>
-                </ResourceDictionary>
-            </Grid.Resources>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="{Binding ARGBEditorsWidth}" />
-                <ColumnDefinition Width="5" />
-                <ColumnDefinition Width="{Binding SliderWidth}" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+   x:Class="Amporis.Xamarin.Forms.ColorPicker.ColorPickerMixer"
+   xmlns="http://xamarin.com/schemas/2014/forms"
+   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   xmlns:local="clr-namespace:Amporis.Xamarin.Forms.ColorPicker"
+   x:Name="pContent">
+   <ContentView.Content>
+      <Grid
+         x:Name="gMain"
+         Padding="0"
+         VerticalOptions="StartAndExpand">
+         <Grid.Resources>
+            <ResourceDictionary>
+               <local:ByteToStrConverter x:Key="cnvNumber" />
+               <Style TargetType="Slider">
+                  <Setter Property="Minimum" Value="0" />
+                  <Setter Property="Maximum" Value="255" />
+                  <Setter Property="VerticalOptions" Value="Center" />
+               </Style>
+               <Style TargetType="Label">
+                  <Setter Property="VerticalOptions" Value="Center" />
+                  <Setter Property="TextColor" Value="{Binding TextColor}" />
+               </Style>
+               <Style TargetType="Entry">
+                  <Setter Property="VerticalOptions" Value="Center" />
+                  <Setter Property="TextColor" Value="{Binding TextColor}" />
+                  <Setter Property="BackgroundColor" Value="{Binding EditorsColor}" />
+               </Style>
+            </ResourceDictionary>
+         </Grid.Resources>
 
-            <Label Text="A" Grid.Row="0" IsVisible="{Binding EditAlpha}" />
-            <Entry Text="{Binding ColorVal.A, Converter={StaticResource cnvNumber}, Mode=TwoWay}" Keyboard="Numeric" Grid.Column="1" Grid.Row="0" IsVisible="{Binding EditAlpha}" />
-            <Slider Value="{Binding ColorVal.A, Mode=TwoWay}" Grid.Column="3" Grid.Row="0" IsVisible="{Binding EditAlpha}" />
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="5*" />
+         </Grid.ColumnDefinitions>
 
-            <Label Text="R" Grid.Row="1" />
-            <Entry Text="{Binding ColorVal.R, Converter={StaticResource cnvNumber}, Mode=TwoWay}" Keyboard="Numeric" Grid.Column="1" Grid.Row="1" />
-            <Slider Value="{Binding ColorVal.R, Mode=TwoWay}" Grid.Column="3" Grid.Row="1" />
+         <Grid.RowDefinitions>
+            <RowDefinition Height="120" />
+            <RowDefinition Height="*" />
+         </Grid.RowDefinitions>
 
-            <Label Text="G" Grid.Row="2" />
-            <Entry Text="{Binding ColorVal.G, Converter={StaticResource cnvNumber}, Mode=TwoWay}" Keyboard="Numeric" Grid.Column="1" Grid.Row="2" />
-            <Slider Value="{Binding ColorVal.G, Mode=TwoWay}" Grid.Column="3" Grid.Row="2" />
+         <Frame
+            x:Name="fMixerPreview"
+            Grid.Row="0"
+            Grid.RowSpan="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="0"
+            BackgroundColor="{Binding ColorVal.Value}"
+            BorderColor="{Binding ColorVal.Value}"
+            HorizontalOptions="FillAndExpand"
+            OutlineColor="{Binding ColorVal.Value}"
+            VerticalOptions="FillAndExpand" />
 
-            <Label Text="B" Grid.Row="3" />
-            <Entry Text="{Binding ColorVal.B, Converter={StaticResource cnvNumber}, Mode=TwoWay}" Keyboard="Numeric" Grid.Column="1" Grid.Row="3" />
-            <Slider Value="{Binding ColorVal.B, Mode=TwoWay}" Grid.Column="3" Grid.Row="3" />
-
-            <Label Text="#" Grid.Row="4" />
-            <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" HorizontalOptions="Fill">
-                <Entry x:Name="eColor" Text="{Binding ColorVal.Hexa, Mode=TwoWay}" WidthRequest="{Binding ColorEditorWidth}" HorizontalOptions="Start" />
-                <Frame BackgroundColor="{Binding ColorVal.Value}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="5,0,0,0" OutlineColor="Black" />
+         <StackLayout
+            x:Name="sMixerControl"
+            Grid.Row="1"
+            Grid.RowSpan="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HorizontalOptions="FillAndExpand"
+            Spacing="0"
+            VerticalOptions="StartAndExpand">
+            <Slider
+               Margin="0,10,0,10"
+               IsVisible="{Binding EditAlpha}"
+               MaximumTrackColor="LightGray"
+               MinimumTrackColor="Black"
+               ThumbColor="Black"
+               Value="{Binding ColorVal.A, Mode=TwoWay}" />
+            <Slider
+               Margin="0,10,0,10"
+               MaximumTrackColor="LightGray"
+               MinimumTrackColor="Red"
+               ThumbColor="Red"
+               Value="{Binding ColorVal.R, Mode=TwoWay}" />
+            <Slider
+               Margin="0,10,0,10"
+               MaximumTrackColor="LightGray"
+               MinimumTrackColor="Green"
+               ThumbColor="Green"
+               Value="{Binding ColorVal.G, Mode=TwoWay}" />
+            <Slider
+               Margin="0,10,0,10"
+               MaximumTrackColor="LightGray"
+               MinimumTrackColor="Blue"
+               ThumbColor="Blue"
+               Value="{Binding ColorVal.B, Mode=TwoWay}" />
+            <StackLayout
+               Margin="0,10,0,10"
+               HorizontalOptions="Fill"
+               Orientation="Horizontal">
+               <Label Text="#" />
+               <Entry
+                  x:Name="eColor"
+                  HorizontalOptions="Start"
+                  Text="{Binding ColorVal.Hexa, Mode=TwoWay}"
+                  WidthRequest="{Binding ColorEditorWidth}" />
             </StackLayout>
-
-        </Grid>
-  </ContentView.Content>
+         </StackLayout>
+      </Grid>
+   </ContentView.Content>
 </ContentView>
