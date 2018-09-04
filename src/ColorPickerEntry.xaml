@@ -1,16 +1,37 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Amporis.Xamarin.Forms.ColorPicker.ColorPickerEntry">
-    <ContentView.Content>
-        <StackLayout x:Name="sLayout" Orientation="Horizontal" Spacing="5">
-            <Entry x:Name="eColor" Text="{Binding Hexa}" Margin="0" 
-                   HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
-            <Frame x:Name="fEdit" Margin="0" HorizontalOptions="End" WidthRequest="30" 
-                   VerticalOptions="Fill" OutlineColor="Black" Padding="0">
-                <Button x:Name="bEdit" BackgroundColor="{Binding Value}" HorizontalOptions="Fill" VerticalOptions="Fill"
-                        Clicked="bEdit_Clicked" Margin="-1"  />
-            </Frame>
-        </StackLayout>
-    </ContentView.Content>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+   x:Class="Amporis.Xamarin.Forms.ColorPicker.ColorPickerEntry"
+   xmlns="http://xamarin.com/schemas/2014/forms"
+   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+   <ContentView.Content>
+      <StackLayout
+         x:Name="sLayout"
+         Orientation="Horizontal"
+         Spacing="5">
+         <Entry
+            x:Name="eColor"
+            Margin="0"
+            HorizontalOptions="FillAndExpand"
+            Text="{Binding Hexa}"
+            VerticalOptions="Start" />
+         <Frame
+            x:Name="fEdit"
+            Margin="0"
+            Padding="0"
+            HorizontalOptions="End"
+            OutlineColor="Black"
+            VerticalOptions="Fill"
+            WidthRequest="30">
+            <Button
+               x:Name="bEdit"
+               Margin="-1"
+               BackgroundColor="{Binding Value}"
+               BorderColor="{Binding Value}"
+               Clicked="bEdit_Clicked"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill"
+               WidthRequest="75" />
+         </Frame>
+      </StackLayout>
+   </ContentView.Content>
 </ContentView>
