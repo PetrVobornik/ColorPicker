@@ -4,19 +4,20 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Xam.Plugin.SimpleColorPicker</AssemblyName>
     <RootNamespace>Amporis.Xamarin.Forms.ColorPicker</RootNamespace>
-    <Description>Color picker for Xamarin.Forms. It can be used as a large color mixer control (ColorPickerMixer) or as a dialog for select a color (ColorPickerDialog) or as an entry editor (ColorPickerEntry) of hexadecimal value with preview of a color and option of launch a dialog with color mixer.</Description>
-    <Authors>Petr Vobornik</Authors>
-    <Company>Amporis, s.r.o.</Company>
-    <Product>ColorPicker</Product>
-    <Copyright>Copyright 2018 Amporis, s.r.o.</Copyright>
+    <Description>Just a nice and simple ColorPicker for your Xamarin Forms project.</Description>
+    <Authors>Mark Heinis</Authors>
+    <Company>HNO Games</Company>
+    <Product>SimpleColorPicker</Product>
+    <Copyright>Copyright 2018 HNO Games</Copyright>
     <PackageTags>Xamarin Forms Color Picker ColorPicker</PackageTags>
-    <AssemblyVersion>1.0.21.0</AssemblyVersion>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.21.0</FileVersion>
-    <PackageProjectUrl>https://github.com/PetrVobornik/ColorPicker</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/PetrVobornik/ColorPicker/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/galadril/Xam.Plugin.SimpleColorPicker</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/galadril/Xam.Plugin.SimpleColorPicker/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl></RepositoryUrl>
     <Version>1.0</Version>
     <PackageId>Xam.Plugin.SimpleColorPicker</PackageId>
+    <PackageReleaseNotes>- Updated the UI from the original branch (see doc)</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
