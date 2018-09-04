@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Amporis.Xamarin.Forms.ColorPicker</AssemblyName>
     <RootNamespace>Amporis.Xamarin.Forms.ColorPicker</RootNamespace>
     <Description>Color picker for Xamarin.Forms. It can be used as a large color mixer control (ColorPickerMixer) or as a dialog for select a color (ColorPickerDialog) or as an entry editor (ColorPickerEntry) of hexadecimal value with preview of a color and option of launch a dialog with color mixer.</Description>
