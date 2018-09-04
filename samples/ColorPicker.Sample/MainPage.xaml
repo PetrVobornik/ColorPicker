@@ -3,7 +3,7 @@
    x:Class="ColorPicker.Sample.MainPage"
    xmlns="http://xamarin.com/schemas/2014/forms"
    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-   xmlns:cp="clr-namespace:Amporis.Xamarin.Forms.ColorPicker;assembly=Amporis.Xamarin.Forms.ColorPicker">
+   xmlns:cp="clr-namespace:Xam.Plugin.SimpleColorPicker;assembly=Xam.Plugin.SimpleColorPicker">
    <Grid x:Name="gMain" Padding="20">
       <ScrollView>
          <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">

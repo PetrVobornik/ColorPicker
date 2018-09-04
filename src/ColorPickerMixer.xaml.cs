@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Amporis.Xamarin.Forms.ColorPicker
+namespace Xam.Plugin.SimpleColorPicker
 {
    [XamlCompilation(XamlCompilationOptions.Compile)]
    public partial class ColorPickerMixer : ContentView

@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Text;
 using Xamarin.Forms;
 
-namespace Amporis.Xamarin.Forms.ColorPicker
+namespace Xam.Plugin.SimpleColorPicker
 {
    public static class ColorPickerUtils
    {

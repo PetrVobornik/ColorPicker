@@ -3,12 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Xam.Plugin.SimpleColorPicker</AssemblyName>
-    <RootNamespace>Amporis.Xamarin.Forms.ColorPicker</RootNamespace>
+    <RootNamespace>Xam.Plugin.SimpleColorPicker</RootNamespace>
     <Description>Just a nice and simple ColorPicker for your Xamarin Forms project.</Description>
     <Authors>Mark Heinis</Authors>
     <Company>HNO Games</Company>
     <Product>SimpleColorPicker</Product>
-    <Copyright>Copyright 2018 HNO Games</Copyright>
+<Copyright>Copyright 2018 Amporis, s.r.o.</Copyright>
     <PackageTags>Xamarin Forms Color Picker ColorPicker</PackageTags>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.21.0</FileVersion>

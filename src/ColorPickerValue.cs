@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Linq;
 using Xamarin.Forms;
 
-namespace Amporis.Xamarin.Forms.ColorPicker
+namespace Xam.Plugin.SimpleColorPicker
 {
    public class ColorValue : INotifyPropertyChanged
    {
