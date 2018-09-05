@@ -11,10 +11,10 @@
 <Copyright>Copyright 2018 Amporis, s.r.o.</Copyright>
     <PackageTags>Xamarin Forms Color Picker ColorPicker</PackageTags>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.21.0</FileVersion>
+    <FileVersion>1.0.0.0</FileVersion>
     <PackageProjectUrl>https://github.com/galadril/Xam.Plugin.SimpleColorPicker</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/galadril/Xam.Plugin.SimpleColorPicker/blob/master/LICENSE</PackageLicenseUrl>
-    <RepositoryUrl></RepositoryUrl>
+    <RepositoryUrl>https://github.com/galadril/Xam.Plugin.SimpleColorPicker</RepositoryUrl>
     <Version>1.0</Version>
     <PackageId>Xam.Plugin.SimpleColorPicker</PackageId>
     <PackageReleaseNotes>- Updated the UI from the original branch (see doc)</PackageReleaseNotes>
