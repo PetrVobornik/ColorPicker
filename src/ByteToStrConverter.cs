@@ -1,34 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 using Xamarin.Forms;
 
-namespace Amporis.Xamarin.Forms.ColorPicker
+namespace Xam.Plugin.SimpleColorPicker
 {
-    /// <summary>
-    /// Converts byte to string (e.g. for editing byte number in Entry/TextBox).
-    /// When a value is invalid, default value (<see cref="DefaultValue"/>) is return.
-    /// </summary>
-    public class ByteToStrConverter : IValueConverter
-    {
-        public byte DefaultValue { get; set; } = 0;
+   /// <summary>
+   /// Converts byte to string (e.g. for editing byte number in Entry/TextBox).
+   /// When a value is invalid, default value (<see cref="DefaultValue"/>) is return.
+   /// </summary>
+   public class ByteToStrConverter : IValueConverter
+   {
+      /// <summary>
+      /// Default value of the converter
+      /// </summary>
+      public byte DefaultValue { get; set; } = 0;
 
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-            => System.Convert.ToString(value ?? DefaultValue);
+      /// <summary>
+      /// Convert byte to string 
+      /// </summary>
+      public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+          => System.Convert.ToString(value ?? DefaultValue);
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            try
-            {
-                return System.Convert.ToByte(value);
-            }
-            catch
-            {
-                return DefaultValue;
-            }
-        }
-    }
-
-
+      /// <summary>
+      /// Convert back to string
+      /// </summary>
+      public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+      {
+         try
+         {
+            return System.Convert.ToByte(value);
+         }
+         catch
+         {
+            return DefaultValue;
+         }
+      }
+   }
 }

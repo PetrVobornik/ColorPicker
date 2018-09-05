@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace ColorPicker.Sample
 {
@@ -12,8 +7,7 @@ namespace ColorPicker.Sample
 		public App ()
 		{
 			InitializeComponent();
-
-			MainPage = new ColorPicker.Sample.MainPage();
+			MainPage = new MainPage();
 		}
 
 		protected override void OnStart ()
