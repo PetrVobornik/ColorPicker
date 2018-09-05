@@ -94,6 +94,7 @@
                <Label Text="#" />
                <Entry
                   x:Name="eColor"
+                  BackgroundColor="#00000000"
                   HorizontalOptions="Start"
                   Text="{Binding ColorVal.Hexa, Mode=TwoWay}"
                   WidthRequest="{Binding ColorEditorWidth}" />

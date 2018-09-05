@@ -33,14 +33,9 @@ namespace Xam.Plugin.SimpleColorPicker
 
       #region Settings 
 
-      private Color textColor = Color.Black;
       private Color editorsColor = Color.White;
       private Color colorPreviewBorderColor = Color.Black;
-      private double sliderWidth = 256;
-      private double aRGBEditorsWidth = 65;
-      private double colorEditorWidth = 120;
 
-      public Color TextColor { get => textColor; set { textColor = value; ValueChanged(); } }
       public Color EditorsColor { get => editorsColor; set { editorsColor = value; ValueChanged(); } }
       public Color ColorPreviewBorderColor { get => colorPreviewBorderColor; set { colorPreviewBorderColor = value; ValueChanged(); } }
       public bool EditAlpha { get => ColorVal.EditAlpha; set { ColorVal.EditAlpha = value; ColorVal.EditAlpha = value; ValueChanged(); } }
@@ -70,6 +65,29 @@ namespace Xam.Plugin.SimpleColorPicker
       {
          get { return (Color)GetValue(ColorProperty); }
          set { if (Color != value) SetValue(ColorProperty, value); }
+      }
+
+      /// <summary>
+      /// Set the entry text color
+      /// </summary>
+      public static readonly BindableProperty TextColorProperty = BindableProperty.Create("TextColor", typeof(Color), typeof(ColorPickerEntry), Color.Black, defaultBindingMode: BindingMode.TwoWay, propertyChanged: TextColorChanged);
+
+      /// <summary>
+      /// Set the text color
+      /// </summary>
+      static void TextColorChanged(BindableObject bindable, object oldValue, object newValue)
+      {
+         if ((Color)oldValue != (Color)newValue)
+            ((ColorPickerMixer)bindable).TextColor = (Color)newValue;
+      }
+
+      /// <summary>
+      /// Text color (bindable property)
+      /// </summary>
+      public Color TextColor
+      {
+         get { return (Color)GetValue(TextColorProperty); }
+         set { if (TextColor != value) SetValue(TextColorProperty, value); ValueChanged(); }
       }
 
       #endregion

@@ -26,10 +26,11 @@ namespace Xam.Plugin.SimpleColorPicker
       /// </summary>
       /// <param name="parent">Root container on the page, where a modal dialog will be temporarily placed</param>
       /// <param name="title">Caption in the header of the dialog</param>
+      /// <param name="dialogColor">Dialog color</param>
       /// <param name="defaultColor">Preselected color</param>
       /// <param name="settings">Dialog settings</param>
       /// <returns>Color selected in dialog or default color, if cancel is clicked</returns>
-      public async static Task<Color> Show(Layout<View> parent, string title, Color defaultColor, ColorDialogSettings settings = null)
+      public async static Task<Color> Show(Layout<View> parent, string title, Color dialogColor, Color defaultColor, Color textColor, ColorDialogSettings settings = null)
       {
          // Creating a dialog
          var dlg = new ColorPickerDialog()
@@ -40,6 +41,8 @@ namespace Xam.Plugin.SimpleColorPicker
             settings = settings ?? new ColorDialogSettings(),
          };
          dlg.Settings = dlg.settings;
+         dlg.settings.DialogColor = dialogColor;
+         dlg.settings.TextColor = textColor;
 
          // Initializing
          await dlg.Initialize();
@@ -121,6 +124,7 @@ namespace Xam.Plugin.SimpleColorPicker
       protected async Task<bool> ShowDialog(Layout<View> parent)
       {
          if (Settings == null) Settings = new DialogSettings(); // Use default values
+
          Parent = null; // Parent byl nastaven, kvůli hledání rootu, ale před přidáním Layoutu do něčeho musí být Parent null
          MinimumWidthRequest = parent.Width;
 
@@ -188,9 +192,7 @@ namespace Xam.Plugin.SimpleColorPicker
                break;
          }
             
-
          Children.Add(MainFrame);
-
          MainConteiner = new StackLayout() { Orientation = StackOrientation.Vertical };
          MainFrame.Content = MainConteiner;
 

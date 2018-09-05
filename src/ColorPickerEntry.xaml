@@ -19,7 +19,7 @@
             Margin="0"
             Padding="0"
             HorizontalOptions="End"
-            OutlineColor="Black"
+            OutlineColor="{Binding Value}"
             VerticalOptions="Fill"
             WidthRequest="30">
             <Button
@@ -27,7 +27,7 @@
                Margin="-1"
                BackgroundColor="{Binding Value}"
                BorderColor="{Binding Value}"
-               Clicked="bEdit_Clicked"
+               Clicked="OpenDialog_Clicked"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
                WidthRequest="75" />
