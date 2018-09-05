@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace Amporis.Xamarin.Forms.ColorPicker
+namespace Xam.Plugin.SimpleColorPicker
 {
    public class ColorPickerDialog : Dialog
    {

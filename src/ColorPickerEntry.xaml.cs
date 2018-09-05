@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Amporis.Xamarin.Forms.ColorPicker
+namespace Xam.Plugin.SimpleColorPicker
 {
     #region PreviewButtonClicked (EventArgs + Delegate)
 

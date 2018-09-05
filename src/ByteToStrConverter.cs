@@ -2,7 +2,7 @@
 using System.Globalization;
 using Xamarin.Forms;
 
-namespace Amporis.Xamarin.Forms.ColorPicker
+namespace Xam.Plugin.SimpleColorPicker
 {
    /// <summary>
    /// Converts byte to string (e.g. for editing byte number in Entry/TextBox).
