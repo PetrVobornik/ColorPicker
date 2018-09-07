@@ -79,9 +79,9 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ColorPicker.NS.csproj">
+    <ProjectReference Include="..\..\src\Xam.Plugin.SimpleColorPicker.csproj">
       <Project>{a0b72722-3b20-4970-bfe6-0e8b02df0df7}</Project>
-      <Name>ColorPicker.NS</Name>
+      <Name>Xam.Plugin.SimpleColorPicker</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="..\ColorPicker.Sample\ColorPicker.Sample.projitems" Label="Shared" />

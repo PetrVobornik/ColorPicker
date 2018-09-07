@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColorPicker.NS", "src\ColorPicker.NS.csproj", "{A0B72722-3B20-4970-BFE6-0E8B02DF0DF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xam.Plugin.SimpleColorPicker", "src\Xam.Plugin.SimpleColorPicker.csproj", "{A0B72722-3B20-4970-BFE6-0E8B02DF0DF7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1AAA6BE5-F64E-4A4E-9EB5-58F77F2BC06F}"
 EndProject

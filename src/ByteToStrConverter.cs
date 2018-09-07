@@ -10,6 +10,8 @@ namespace Xam.Plugin.SimpleColorPicker
    /// </summary>
    public class ByteToStrConverter : IValueConverter
    {
+      #region Public
+
       /// <summary>
       /// Default value of the converter
       /// </summary>
@@ -30,10 +32,13 @@ namespace Xam.Plugin.SimpleColorPicker
          {
             return System.Convert.ToByte(value);
          }
-         catch
+         catch (Exception ex)
          {
+            Console.Write(ex?.Message);
             return DefaultValue;
          }
       }
+
+      #endregion
    }
 }

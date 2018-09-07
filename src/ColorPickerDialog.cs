@@ -30,7 +30,7 @@ namespace Xam.Plugin.SimpleColorPicker
       /// <param name="defaultColor">Preselected color</param>
       /// <param name="settings">Dialog settings</param>
       /// <returns>Color selected in dialog or default color, if cancel is clicked</returns>
-      public async static Task<Color> Show(Layout<View> parent, string title, Color dialogColor, Color defaultColor, Color textColor, ColorDialogSettings settings = null)
+      public async static Task<Color> Show(Layout<View> parent, string title, Color defaultColor, ColorDialogSettings settings = null)
       {
          // Creating a dialog
          var dlg = new ColorPickerDialog()
@@ -41,8 +41,6 @@ namespace Xam.Plugin.SimpleColorPicker
             settings = settings ?? new ColorDialogSettings(),
          };
          dlg.Settings = dlg.settings;
-         dlg.settings.DialogColor = dialogColor;
-         dlg.settings.TextColor = textColor;
 
          // Initializing
          await dlg.Initialize();
