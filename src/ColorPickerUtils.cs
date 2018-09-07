@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
+﻿using System.Reflection;
 using Xamarin.Forms;
 
 namespace Xam.Plugin.SimpleColorPicker
 {
+   /// <summary>
+   /// Static color utils
+   /// </summary>
    public static class ColorPickerUtils
    {
+      #region Public
+
       /// <summary>
       /// Convert Color to its hexadecimal string
       /// </summary>
@@ -55,12 +57,13 @@ namespace Xam.Plugin.SimpleColorPicker
          T result = parent as T;
          while (parent.Parent?.GetType().GetTypeInfo().IsSubclassOf(typeof(Element)) == true)
          {
-            parent = parent.Parent as Element;
+            parent = parent.Parent;
             if (parent.GetType().GetTypeInfo().IsSubclassOf(typeof(T)))
                result = (T)parent;
          }
          return result;
       }
 
+      #endregion
    }
 }

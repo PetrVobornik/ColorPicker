@@ -1,44 +1,65 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using System;
+using System.ComponentModel;
 using System.Linq;
 using Xamarin.Forms;
 
 namespace Xam.Plugin.SimpleColorPicker
 {
+   /// <summary>
+   /// Container for color values
+   /// </summary>
    public class ColorValue : INotifyPropertyChanged
    {
+      #region Variables
+
       private byte a = 255, r = 255, g = 255, b = 255;
+      private bool valueIsChanging = false;
+      public event PropertyChangedEventHandler PropertyChanged;
+      private bool editAlpha = true;
+      
+      #endregion
 
-      #region ARGB
+      #region Properties
 
+      /// <summary>
+      /// Alpha
+      /// </summary>
       public byte A
       {
          get => a;
          set { if (value != a) { a = value; ValuesChanged(nameof(A), nameof(Value), nameof(Hexa)); } }
       }
 
+      /// <summary>
+      /// Red
+      /// </summary>
       public byte R
       {
          get => r;
          set { if (value != r) { r = value; ValuesChanged(nameof(R), nameof(Value), nameof(Hexa)); } }
       }
 
+      /// <summary>
+      /// Green
+      /// </summary>
       public byte G
       {
          get => g;
          set { if (value != g) { g = value; ValuesChanged(nameof(G), nameof(Value), nameof(Hexa)); } }
       }
 
+      /// <summary>
+      /// Blue
+      /// </summary>
       public byte B
       {
          get => b;
          set { if (value != b) { b = value; ValuesChanged(nameof(B), nameof(Value), nameof(Hexa)); } }
       }
 
-      #endregion
-
-      #region Value
-
+      /// <summary>
+      /// Result value
+      /// </summary>
       public Color Value
       {
          get { return ColorPickerUtils.ColorFromARGB(a, r, g, b); }
@@ -54,10 +75,9 @@ namespace Xam.Plugin.SimpleColorPicker
          }
       }
 
-      #endregion
-
-      #region Hexa
-
+      /// <summary>
+      /// Hex value
+      /// </summary>
       public string Hexa
       {
          get
@@ -78,15 +98,13 @@ namespace Xam.Plugin.SimpleColorPicker
                if (Value != clr)
                   Value = clr;
             }
-            catch { }
+            catch (Exception ex) { Console.Write(ex?.Message); }
          }
       }
 
-      #endregion
-
-      #region EditAlpha
-
-      private bool editAlpha = true;
+      /// <summary>
+      /// Enable edit alpha
+      /// </summary>
       public bool EditAlpha
       {
          get => editAlpha;
@@ -95,12 +113,11 @@ namespace Xam.Plugin.SimpleColorPicker
 
       #endregion
 
-      #region PropertyChanged
+      #region Private
 
-      bool valueIsChanging = false;
-
-      public event PropertyChangedEventHandler PropertyChanged;
-
+      /// <summary>
+      /// Value changed
+      /// </summary>
       private void ValuesChanged(params string[] propNames)
       {
          if (valueIsChanging) // Pokud změnu iniciuje změna ve values, tak neoznamovat její změnu, když se mění jednotlivé položky, sama se nakonec ohlásí, až je změní všechny
@@ -109,9 +126,6 @@ namespace Xam.Plugin.SimpleColorPicker
             foreach (string prop in propNames)
                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
       }
-
-      private void ValueChanged([CallerMemberName] string propName = null)
-          => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
 
       #endregion
    }

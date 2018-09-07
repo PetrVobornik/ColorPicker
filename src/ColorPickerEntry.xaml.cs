@@ -8,6 +8,9 @@ namespace Xam.Plugin.SimpleColorPicker
 {
    #region PreviewButtonClicked (EventArgs + Delegate)
 
+   /// <summary>
+   /// Preview button clicked event args
+   /// </summary>
    public class PreviewButtonClickedEventArgs
    {
       /// <summary>
@@ -21,13 +24,22 @@ namespace Xam.Plugin.SimpleColorPicker
       public bool Handled { get; set; }
    }
 
+   /// <summary>
+   /// Preview button clicked
+   /// </summary>
    public delegate Task PreviewButtonClickedDelegate(object sender, PreviewButtonClickedEventArgs e);
 
    #endregion
 
+   /// <summary>
+   /// Color picker entry control
+   /// </summary>
    [XamlCompilation(XamlCompilationOptions.Compile)]
    public partial class ColorPickerEntry : ContentView
    {
+      /// <summary>
+      /// Constructor
+      /// </summary>
       public ColorPickerEntry()
       {
          InitializeComponent();
@@ -66,13 +78,12 @@ namespace Xam.Plugin.SimpleColorPicker
       /// <summary>
       /// Color of the color preview button border
       /// </summary>
-      public Color ColorPreviewButtonBorder { get => fEdit.OutlineColor; set { fEdit.OutlineColor = value; } }
+      public Color ColorPreviewButtonBorder { get => fEdit.BorderColor; set { fEdit.BorderColor = value; } }
 
       /// <summary>
       /// Space between editor and button
       /// </summary>
       public double SpaceBetweenEditorAndButton { get => sLayout.Spacing; set => sLayout.Spacing = value; }
-
 
       /// <summary>
       /// Show modal dialog (<see cref="ColorPickerDialog"/>) with color mixer (<see cref="ColorPickerMixer"/>) when click to the color preview button
@@ -84,6 +95,10 @@ namespace Xam.Plugin.SimpleColorPicker
       /// TRUE - edited are ARGB, FALSE - edited are only RGB.
       /// </summary>
       public bool EditAlfa { get => ColorVal.EditAlpha; set => ColorVal.EditAlpha = value; }
+
+      /// <summary>
+      /// Dialog settings
+      /// </summary>
       public ColorDialogSettings DialogSettings { get; set; }
 
       /// <summary>
@@ -192,9 +207,9 @@ namespace Xam.Plugin.SimpleColorPicker
             RootContainer = ColorPickerUtils.GetRootParent<Layout<View>>(this);
          if (RootContainer != null)
          {
-            var ds = DialogSettings ?? new ColorDialogSettings();
+            var ds = DialogSettings ?? new ColorDialogSettings(){ DialogColor = DialogColor, TextColor = TextColor};
             ds.EditAlfa = EditAlfa;
-            ColorVal.Value = await ColorPickerDialog.Show(RootContainer, DialogTitle, DialogColor, ColorVal.Value, TextColor, ds);
+            ColorVal.Value = await ColorPickerDialog.Show(RootContainer, DialogTitle, ColorVal.Value, ds);
          }
       }
    }

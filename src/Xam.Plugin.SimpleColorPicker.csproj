@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Xam.Plugin.SimpleColorPicker</AssemblyName>
+    <RootNamespace>Xam.Plugin.SimpleColorPicker</RootNamespace>
+    <Description>Just a nice and SimpleColorPicker for your Xamarin Forms project.</Description>
+    <Authors>Mark Heinis</Authors>
+    <Company>HNO Games</Company>
+    <Product>SimpleColorPicker</Product>
+<Copyright>Copyright 2018 Amporis, s.r.o.</Copyright>
+    <PackageTags>Xamarin Forms Color Picker ColorPicker</PackageTags>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <PackageProjectUrl>https://github.com/galadril/Xam.Plugin.SimpleColorPicker</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/galadril/Xam.Plugin.SimpleColorPicker/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/galadril/Xam.Plugin.SimpleColorPicker</RepositoryUrl>
+    <Version>1.0</Version>
+    <PackageId>Xam.Plugin.SimpleColorPicker</PackageId>
+    <PackageReleaseNotes></PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ColorPicker.PCL.nuget.targets" />
+    <None Remove="packages.config" />
+    <None Remove="project.json" />
+    <None Remove="project.lock.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel" Version="4.3.0" />
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ColorPickerEntry.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="ColorPickerMixer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+</Project>
