@@ -54,6 +54,7 @@ namespace Xam.Plugin.SimpleColorPicker
          return defaultColor;
       }
 
+
 #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
       /// <summary>
       /// Init the color mixer
