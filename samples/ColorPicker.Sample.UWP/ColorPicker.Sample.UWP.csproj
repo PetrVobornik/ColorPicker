@@ -148,13 +148,13 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+    <PackageReference Include="Xamarin.Forms" Version="3.2.0.839982" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.1.7" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ColorPicker.NS.csproj">
-      <Project>{a0b72722-3b20-4970-bfe6-0e8b02df0df7}</Project>
-      <Name>ColorPicker.NS</Name>
+    <ProjectReference Include="..\..\src\Xam.Plugin.SimpleColorPicker.csproj">
+      <Project>{1f5c8acc-b40f-48ae-81f5-3e455399c892}</Project>
+      <Name>Xam.Plugin.SimpleColorPicker</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="..\ColorPicker.Sample\ColorPicker.Sample.projitems" Label="Shared" />

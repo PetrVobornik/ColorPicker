@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Xam.Plugin.SimpleColorPicker;
+using Xamarin.Forms;
 
 namespace ColorPicker.Sample
 {
@@ -25,6 +26,15 @@ namespace ColorPicker.Sample
       {
          get => editedColor;
          set { editedColor = value; OnPropertyChanged(); }
+      }
+
+      /// <summary>
+      /// Open dialog
+      /// </summary>
+      private async void OpenColorPicker_Clicked(object sender, System.EventArgs e)
+      {
+         await ColorPickerDialog.Show(ColorPickerUtils.GetRootParent<Layout<View>>((View)sender), 
+            "Sample" ,Color.White, new ColorDialogSettings());
       }
    }
 }
