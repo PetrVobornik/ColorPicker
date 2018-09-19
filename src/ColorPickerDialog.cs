@@ -122,18 +122,19 @@ namespace Xam.Plugin.SimpleColorPicker
 
       protected async Task<bool> ShowDialog(Layout<View> parent)
       {
-         if (Settings == null) Settings = new DialogSettings(); // Use default values
+         if (Settings == null)
+            Settings = new DialogSettings(); // Use default values
 
          Parent = null; // Parent byl nastaven, kvůli hledání rootu, ale před přidáním Layoutu do něčeho musí být Parent null
          MinimumWidthRequest = parent.Width;
 
          // V gridu přes všechny řádky a sloupce 
-         if (parent is Grid)
+         if (parent is Grid grid)
          {
-            if (((Grid)parent).RowDefinitions.Count > 1)
-               SetRowSpan(this, ((Grid)parent).RowDefinitions.Count);
-            if (((Grid)parent).ColumnDefinitions.Count > 1)
-               SetColumnSpan(this, ((Grid)parent).ColumnDefinitions.Count);
+            if (grid.RowDefinitions.Count > 1)
+               SetRowSpan(this, grid.RowDefinitions.Count);
+            if (grid.ColumnDefinitions.Count > 1)
+               SetColumnSpan(this, grid.ColumnDefinitions.Count);
          }
 
          uint animLength = 400;
