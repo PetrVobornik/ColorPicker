@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
+﻿using System.Reflection;
 using Xamarin.Forms;
 
 namespace Amporis.Xamarin.Forms.ColorPicker
@@ -55,7 +52,7 @@ namespace Amporis.Xamarin.Forms.ColorPicker
             T result = parent as T;
             while (parent.Parent?.GetType().GetTypeInfo().IsSubclassOf(typeof(Element)) == true)
             {
-                parent = parent.Parent as Element;
+                parent = parent.Parent;
                 if (parent.GetType().GetTypeInfo().IsSubclassOf(typeof(T)))
                     result = (T)parent;
             }

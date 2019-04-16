@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -11,6 +8,9 @@ namespace Amporis.Xamarin.Forms.ColorPicker
 {
     #region PreviewButtonClicked (EventArgs + Delegate)
 
+    /// <summary>
+    /// Preview button clicked event args
+    /// </summary>
     public class PreviewButtonClickedEventArgs
     {
         /// <summary>
@@ -24,10 +24,16 @@ namespace Amporis.Xamarin.Forms.ColorPicker
         public bool Handled { get; set; }
     }
 
+    /// <summary>
+    /// Preview button clicked
+    /// </summary>
     public delegate Task PreviewButtonClickedDelegate(object sender, PreviewButtonClickedEventArgs e);
 
     #endregion
 
+    /// <summary>
+    /// Color picker entry control
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ColorPickerEntry : ContentView
     {
@@ -69,7 +75,7 @@ namespace Amporis.Xamarin.Forms.ColorPicker
         /// <summary>
         /// Color of the color preview button border
         /// </summary>
-        public Color ColorPreviewButtonBorder { get => fEdit.OutlineColor; set { fEdit.OutlineColor = value; } }
+        public Color ColorPreviewButtonBorder { get => fEdit.BorderColor; set { fEdit.BorderColor = value; } }
 
         /// <summary>
         /// Space between editor and button
@@ -87,6 +93,10 @@ namespace Amporis.Xamarin.Forms.ColorPicker
         /// TRUE - edited are ARGB, FALSE - edited are only RGB.
         /// </summary>
         public bool EditAlfa { get => ColorVal.EditAlpha; set => ColorVal.EditAlpha = value; }
+
+        /// <summary>
+        /// Dialog settings
+        /// </summary>
         public ColorDialogSettings DialogSettings { get; set; }
 
         /// <summary>
@@ -102,7 +112,10 @@ namespace Amporis.Xamarin.Forms.ColorPicker
 
         #region Color
 
-        public static readonly BindableProperty ColorProperty = BindableProperty.Create("Color", typeof(Color), typeof(ColorPickerEntry), Color.White, defaultBindingMode: BindingMode.TwoWay, propertyChanged: ColorChanged);
+        /// <summary>
+        /// Set the current color for the picker
+        /// </summary>
+        public static readonly BindableProperty ColorProperty = BindableProperty.Create(nameof(Color), typeof(Color), typeof(ColorPickerEntry), Color.White, defaultBindingMode: BindingMode.TwoWay, propertyChanged: ColorChanged);
 
         static void ColorChanged(BindableObject bindable, object oldValue, object newValue)
         {
@@ -120,6 +133,7 @@ namespace Amporis.Xamarin.Forms.ColorPicker
         }
 
         #endregion
+
 
         private async void bEdit_Clicked(object sender, EventArgs e)
         {

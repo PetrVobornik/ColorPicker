@@ -1,9 +1,0 @@
-﻿{
-  "dependencies": {
-    "Xamarin.Forms": "2.5.0.280555"
-  },
-  "frameworks": {
-    ".NETPortable,Version=v4.5,Profile=Profile49": {}
-  },
-  "supports": {}
-}

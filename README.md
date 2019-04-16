@@ -8,14 +8,12 @@ https://raw.githubusercontent.com/PetrVobornik/ColorPicker/master/README.md?raw=
 
 ## Platform Support
 
-Color picker control is written in C# (.NET 4.5) and uses standard Xamarin.Forms only.
-Color picker was tested as NuGet in shared PCL library with these platforms:
+Color picker control is written in C# (.NET 4.5) as .NET Standard 2.0 project and uses standard Xamarin.Forms only. It is compatible to use with UWP, Android and iOS.
 
-|Platform|Version|
-| ------------------- | :------------------: |
-|Windows 10 UWP|10+|
-|Xamarin.Android|API 14+|
-|Xamarin.iOS|iOS 8+|
+
+## Instalation
+
+Add NuGet (or source files) to your Xamarin.Forms - .NET Standard project (or to shared project). There is no need to add project to platform specific projects
 
 
 ## Usage
@@ -118,3 +116,8 @@ var color = await ColorPickerDialog.Show(gMain, "ColorPickerDialog", Color.White
   * ARGBEditorsWidth (65)
   * ColorEditorWidth (120)
   * EditAlfa (true)
+
+
+  ## Thanks
+  I thanks to [galadril](https://github.com/galadril/) for his [pull request](https://github.com/PetrVobornik/ColorPicker/pull/5) ideas and his subversion of ColorPicker - [SimpleColorPicker](https://github.com/galadril/Xam.Plugin.SimpleColorPicker)
+  

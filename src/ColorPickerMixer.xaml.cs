@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-using XF = Xamarin.Forms;
+﻿using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -37,14 +29,13 @@ namespace Amporis.Xamarin.Forms.ColorPicker
 
         #region Settings 
 
-        private Color textColor = XF.Color.Black;
-        private Color editorsColor = XF.Color.White;
-        private Color colorPreviewBorderColor = XF.Color.Black;
+        private Color editorsColor = Color.White;
+        private Color colorPreviewBorderColor = Color.Black;
         private double sliderWidth = 256;
         private double aRGBEditorsWidth = 65;
         private double colorEditorWidth = 120;
 
-        public Color TextColor { get => textColor; set { textColor = value; ValueChanged(); } }
+        //public Color TextColor { get => textColor; set { textColor = value; ValueChanged(); } }
         public Color EditorsColor { get => editorsColor; set { editorsColor = value; ValueChanged(); } }
         public Color ColorPreviewBorderColor { get => colorPreviewBorderColor; set { colorPreviewBorderColor = value; ValueChanged(); } }
         public double SliderWidth { get => sliderWidth; set { sliderWidth = value; ValueChanged(); } }
@@ -56,6 +47,9 @@ namespace Amporis.Xamarin.Forms.ColorPicker
 
         #region Color
 
+        /// <summary>
+        /// Color property
+        /// </summary>
         public static readonly BindableProperty ColorProperty = BindableProperty.Create(nameof(Color), typeof(Color), typeof(ColorPickerEntry), Color.White, defaultBindingMode: BindingMode.TwoWay, propertyChanged: ColorChanged);
 
         static void ColorChanged(BindableObject bindable, object oldValue, object newValue)
@@ -74,6 +68,34 @@ namespace Amporis.Xamarin.Forms.ColorPicker
         }
 
         #endregion
+
+        #region TextColor
+     
+        /// <summary>
+        /// Set the entry text color
+        /// </summary>
+        public static readonly BindableProperty TextColorProperty = BindableProperty.Create(nameof(TextColor), typeof(Color), typeof(ColorPickerEntry), Color.Black, defaultBindingMode: BindingMode.TwoWay, propertyChanged: TextColorChanged);
+
+        /// <summary>
+        /// Set the text color
+        /// </summary>
+        static void TextColorChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if ((Color)oldValue != (Color)newValue)
+                ((ColorPickerMixer)bindable).TextColor = (Color)newValue;
+        }
+
+        /// <summary>
+        /// Text color (bindable property)
+        /// </summary>
+        public Color TextColor
+        {
+            get { return (Color)GetValue(TextColorProperty); }
+            set { if (TextColor != value) SetValue(TextColorProperty, value); ValueChanged(); }
+        }
+
+        #endregion
+
 
         private void ValueChanged([CallerMemberName] string propName = null) => OnPropertyChanged(propName);
     }

@@ -15,7 +15,7 @@ namespace ColorPicker.Sample
             gMain.BindingContext = this;
         }
 
-        private Color editedColor;
+        private Color editedColor = Color.FromHex("#FFFF8000"); //default value;
 
         public Color EditedColor {
             get => editedColor;

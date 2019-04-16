@@ -45,7 +45,13 @@ namespace Amporis.Xamarin.Forms.ColorPicker
             return defaultColor;
         }
 
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
+        /// <summary>
+        /// Init the color mixer
+        /// </summary>
+        /// <returns>Color mixer view</returns>
         protected async override Task<View> BuildContent()
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
         {
             colorEditor = new ColorPickerMixer()
             {
@@ -62,6 +68,9 @@ namespace Amporis.Xamarin.Forms.ColorPicker
         }
     }
 
+    /// <summary>
+    /// Dialog settings holder base
+    /// </summary>
     public class DialogSettings
     {
         public Color BackgroundColor { get; set; } = Color.FromHex("#40000000");
@@ -72,6 +81,9 @@ namespace Amporis.Xamarin.Forms.ColorPicker
         public bool DialogAnimation { get; set; } = true;
     }
 
+    /// <summary>
+    /// Dialog settings holder
+    /// </summary>
     public class ColorDialogSettings : DialogSettings
     {
         public Color EditorsColor { get; set; } = Color.White;
@@ -83,6 +95,9 @@ namespace Amporis.Xamarin.Forms.ColorPicker
     }
 
 
+    /// <summary>
+    /// Dialog
+    /// </summary>
     public abstract class Dialog : Grid
     {
         protected DialogSettings Settings { get; set; }
@@ -91,38 +106,42 @@ namespace Amporis.Xamarin.Forms.ColorPicker
         {
             if (Settings == null) Settings = new DialogSettings(); // Use default values
             Parent = null; // Parent byl nastaven, kvůli hledání rootu, ale před přidáním Layoutu do něčeho musí být Parent null
-            this.MinimumWidthRequest = parent.Width;
+            MinimumWidthRequest = parent.Width;
 
             // V gridu přes všechny řádky a sloupce 
-            if (parent is Grid)
+            if (parent is Grid grid)
             {
-                if (((Grid)parent).RowDefinitions.Count > 1)
-                    Grid.SetRowSpan(this, ((Grid)parent).RowDefinitions.Count);
-                if (((Grid)parent).ColumnDefinitions.Count > 1)
-                    Grid.SetColumnSpan(this, ((Grid)parent).ColumnDefinitions.Count);
+                if (grid.RowDefinitions.Count > 1)
+                    SetRowSpan(this, grid.RowDefinitions.Count);
+                if (grid.ColumnDefinitions.Count > 1)
+                    SetColumnSpan(this, grid.ColumnDefinitions.Count);
             }
 
-            // Animace zobrazení
+            // Display animation
             uint animLength = 400;
             if (Settings.DialogAnimation)
             {
-                this.Opacity = 0;
+                Opacity = 0;
                 MainFrame.Scale = 0.75;
                 parent.Children.Add(this);
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 this.FadeTo(1, animLength, Easing.SinOut);
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 await MainFrame.ScaleTo(1, animLength, Easing.SinOut);
             } else 
                 parent.Children.Add(this);
-            // Čekání na odkliknutí
-            string result = await this.WaitForClick();
-            // Animace zmizení
+            // Waiting for click
+            string result = await WaitForClick();
+            // The disappearance animation
             if (Settings.DialogAnimation)
             {
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 this.FadeTo(0, animLength, Easing.SinIn);
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 await MainFrame.ScaleTo(0.75, animLength, Easing.SinIn);
             }
             parent.Children.Remove(this);
-            // Vrácení výsledku
+            // Returning the result
             return result == btnOk?.Text;
         }
 
@@ -136,16 +155,21 @@ namespace Amporis.Xamarin.Forms.ColorPicker
         protected Button btnOk, btnCancel;
         protected StackLayout stlTitle, stlButtons;
 
+        /// <summary>
+        /// init dialog grid
+        /// </summary>
         protected async Task Initialize()
         {
             Children.Clear();
 
-            // Grid v pozadí (překryv)
+            // Background Grid (Overlay)
             HorizontalOptions = LayoutOptions.Fill;
             VerticalOptions = LayoutOptions.Fill;
             BackgroundColor = Settings.BackgroundColor;
+            Margin = new Thickness(-20);
+            Padding = new Thickness(20);
 
-            // Grid s pozadím dialogu
+            // Grid with dialogue background
             MainFrame = new Frame()
             {
                 HorizontalOptions = LayoutOptions.Center,
@@ -156,32 +180,37 @@ namespace Amporis.Xamarin.Forms.ColorPicker
             };
             Children.Add(MainFrame);
 
-            // Grid pro umístění obsahu dialogu
+            // Container for the contents of the dialog
             MainConteiner = new StackLayout() { Orientation = StackOrientation.Vertical };
-            MainFrame.Content = MainConteiner;
+            MainFrame.Content = new ScrollView() { Content = MainConteiner };
 
             // Title
-            stlTitle = new StackLayout() { Orientation = StackOrientation.Horizontal, Margin = new Thickness(0, 0, 0, 10), HorizontalOptions = LayoutOptions.Fill };
-            MainConteiner.Children.Add(stlTitle);
-            lblTitle = new Label();
-            lblTitle.FontSize *= 1.5;
-            lblTitle.VerticalOptions = LayoutOptions.Center;
-            lblTitle.Text = Title;
-            lblTitle.TextColor = Settings.TextColor;
-            stlTitle.Children.Add(lblTitle);
+            if (!String.IsNullOrEmpty(Title))
+            {
+                stlTitle = new StackLayout() { Orientation = StackOrientation.Horizontal, Margin = new Thickness(0, 0, 0, 10), HorizontalOptions = LayoutOptions.Fill };
+                MainConteiner.Children.Add(stlTitle);
+                lblTitle = new Label()
+                {
+                    VerticalOptions = LayoutOptions.Center,
+                    Text = Title,
+                    TextColor = Settings.TextColor,
+                };
+                lblTitle.FontSize *= 1.5;
+                stlTitle.Children.Add(lblTitle);
+            }
 
             // Buttons (container)
-            stlButtons = new StackLayout();
-            stlButtons.HorizontalOptions = LayoutOptions.End;
-            stlButtons.Orientation = StackOrientation.Horizontal;
+            stlButtons = new StackLayout() {
+                HorizontalOptions = LayoutOptions.End,
+                Orientation = StackOrientation.Horizontal,
+            };
 
             // Button OK
             if (!String.IsNullOrEmpty(Settings.OkButtonText))
             {
-                btnOk = new Button();
-                btnOk.Clicked += Btn_Clicked;
-                btnOk.Text = Settings.OkButtonText;
+                btnOk = new Button() { Text = Settings.OkButtonText };
                 stlButtons.Children.Add(btnOk);
+                btnOk.Clicked += Btn_Clicked;
             }
 
             // Button Cancel
@@ -195,9 +224,8 @@ namespace Amporis.Xamarin.Forms.ColorPicker
                 stlButtons.Children.Add(btnCancel);
             }
 
-            // Obsah dialogu
+            // Content of the dialogue
             MainConteiner.Children.Add(await BuildContent());
-
             MainConteiner.Children.Add(stlButtons);
 
         }
@@ -219,6 +247,9 @@ namespace Amporis.Xamarin.Forms.ColorPicker
                 buttonClicked.TrySetResult(((Button)sender).Text);   // Nastavit "čekači" hodnotu z tagu tlačítka na které se kliklo 
         }
 
+        /// <summary>
+        /// Close the dialog
+        /// </summary>
         protected void CloseDialog()
         {
             if (buttonClicked != null)
