@@ -248,12 +248,101 @@ namespace Amporis.Xamarin.Forms.ColorPicker
         }
 
         /// <summary>
-        /// Close the dialog
+        /// Close the dialog by Cancel
         /// </summary>
         protected void CloseDialog()
         {
             if (buttonClicked != null)
                 buttonClicked.TrySetResult("");
         }
+
+        /// <summary>
+        /// Close the dialog by OK
+        /// </summary>
+        protected void CloseDialogOk()
+        {
+            if (buttonClicked != null)
+                buttonClicked.TrySetResult(btnOk.Text);
+        }
+    }
+
+
+    /// <summary>
+    /// Input dialog (bonus)
+    /// </summary>
+    public class InputDialog : Dialog
+    {
+        ColorDialogSettings settings;
+
+        public async static Task<string> Show(Layout<View> parent, string title, string header, string defaultText, string ext = "", ColorDialogSettings settings = null)
+        {
+            // Creating a dialog
+            var dlg = new InputDialog()
+            {
+                Parent = parent,
+                Title = title,
+                ext = ext,
+                settings = settings ?? new ColorDialogSettings(),                
+            };
+            dlg.Settings = dlg.settings;
+
+            await dlg.Initialize();
+
+            dlg.lblHeader.Text = header;
+            dlg.edtEditor.Text = defaultText;
+
+            // Zobrazení
+            bool result = await dlg.ShowDialog(parent);
+            if (result)
+                return dlg.edtEditor.Text;
+            return String.Empty;
+        }
+
+        protected override void OnShow()
+        {
+            base.OnShow();
+            edtEditor.Focus();
+        }
+
+        Label lblHeader;
+        Entry edtEditor;
+        string ext = "";
+
+
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
+        protected async override Task<View> BuildContent()
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
+        {
+            var stlContent = new StackLayout();
+            stlContent.Orientation = StackOrientation.Vertical;
+
+            // Header
+            lblHeader = new Label() { TextColor = settings.TextColor, Margin = new Thickness(0, 0, 0, 2) };
+            stlContent.Children.Add(lblHeader);
+
+            // Editor
+            edtEditor = new Entry() { TextColor = settings.TextColor, BackgroundColor = settings.EditorsColor };
+            edtEditor.Completed += (s, e) => CloseDialogOk();
+            if (String.IsNullOrEmpty(ext))
+            {
+                edtEditor.Margin = new Thickness(0, 0, 0, 10);
+                stlContent.Children.Add(edtEditor);
+            }
+            else
+            {
+                edtEditor.WidthRequest = 160;
+                var grd = new Grid();
+                grd.Margin = new Thickness(0, 0, 0, 10);
+                grd.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Auto) });
+                grd.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Auto) });
+                grd.AddChild(edtEditor, 0, 0).SetLayoutOption(LO.S, LO.C);
+                grd.AddChild(new Label() { Text = ext, Margin = new Thickness(5, 0, 0, 0), TextColor = settings.TextColor }, 0, 1)
+                    .SetLayoutOption(LO.S, LO.C);
+                stlContent.Children.Add(grd);
+            }
+
+            return stlContent;
+        }
+
     }
 }

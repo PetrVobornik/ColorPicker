@@ -13,8 +13,7 @@ Color picker control is written in C# (.NET 4.5) as .NET Standard 2.0 project an
 
 ## Instalation
 
-Add NuGet (or source files) to your Xamarin.Forms - .NET Standard project (or to shared project). There is no need to add project to platform specific projects
-
+Add NuGet (or source files) to your Xamarin.Forms .NET Standard project (or to shared project). There is no need to add NuGet to platform specific projects.
 
 ## Usage
 

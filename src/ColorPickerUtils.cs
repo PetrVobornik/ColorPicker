@@ -59,5 +59,64 @@ namespace Amporis.Xamarin.Forms.ColorPicker
             return result;
         }
 
+        public static T SetGridCoords<T>(this T v, int row = 0, int col = 0, int rowSpan = 1, int colSpan = 1) where T : View
+        {
+            Grid.SetRow(v, row);
+            Grid.SetColumn(v, col);
+            Grid.SetRowSpan(v, rowSpan);
+            Grid.SetColumnSpan(v, colSpan);
+            return v;
+        }
+
+        public static T AddChild<T>(this Grid grd, T child, int row = 0, int col = 0, int rowSpan = 1, int colSpan = 1) where T : View
+        {
+            grd.Children.Add(child.SetGridCoords(row, col, rowSpan, colSpan));
+            return child;
+        }
+
+        public static LayoutOptions LOtoLayoutOptions(LO layoutOptions)
+        {
+            switch (layoutOptions)
+            {
+                case LO.S: return LayoutOptions.Start;
+                case LO.C: return LayoutOptions.Center;
+                case LO.E: return LayoutOptions.End;
+                case LO.F: return LayoutOptions.Fill;
+                case LO.SE: return LayoutOptions.StartAndExpand;
+                case LO.CE: return LayoutOptions.CenterAndExpand;
+                case LO.EE: return LayoutOptions.EndAndExpand;
+                case LO.FE: return LayoutOptions.FillAndExpand;
+                default: return LayoutOptions.Start;
+            }
+        }
+
+        public static T SetLayoutOption<T>(this T v, LO? horizontalOptions = null, LO? verticalOptions = null, double? marginDefault = null,
+            double? marginLeft = null, double? marginTop = null, double? marginRight = null, double? marginBottom = null) where T : View
+        {
+            if (horizontalOptions != null)
+                v.HorizontalOptions = LOtoLayoutOptions((LO)horizontalOptions);
+            if (verticalOptions != null)
+                v.VerticalOptions = LOtoLayoutOptions((LO)verticalOptions);
+            if (marginDefault != null || marginLeft != null || marginTop != null || marginRight != null || marginBottom != null)
+                v.Margin = new Thickness(
+                    marginLeft ?? marginDefault ?? v.Margin.Left,
+                    marginTop ?? marginDefault ?? v.Margin.Top,
+                    marginRight ?? marginDefault ?? v.Margin.Right,
+                    marginBottom ?? marginDefault ?? v.Margin.Bottom);
+            return v;
+        }
+
+    }
+
+    public enum LO
+    {
+        S,  // Start
+        C,  // Center
+        E,  // End
+        F,  // Fill
+        SE, // StartAndExpand
+        CE, // CenterAndExpand
+        EE, // EndAndExpand
+        FE, // FillAndExpand
     }
 }
