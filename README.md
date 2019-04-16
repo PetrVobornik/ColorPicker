@@ -118,6 +118,6 @@ var color = await ColorPickerDialog.Show(gMain, "ColorPickerDialog", Color.White
   * EditAlfa (true)
 
 
-  ## Thanks
-  I thanks to [galadril](https://github.com/galadril/) for his [pull request](https://github.com/PetrVobornik/ColorPicker/pull/5) ideas and his subversion of ColorPicker - [SimpleColorPicker](https://github.com/galadril/Xam.Plugin.SimpleColorPicker)
+## Acknowledgment
+I'd like to thank [galadril](https://github.com/galadril/) for his [pull request](https://github.com/PetrVobornik/ColorPicker/pull/5) ideas and his subversion of ColorPicker - [SimpleColorPicker](https://github.com/galadril/Xam.Plugin.SimpleColorPicker)
   
