@@ -79,6 +79,7 @@ namespace Amporis.Xamarin.Forms.ColorPicker
         public string OkButtonText { get; set; } = "OK";
         public string CancelButtonText { get; set; } = "Cancel";
         public bool DialogAnimation { get; set; } = true;
+        public bool HideNavigationBar { get; set; } = false;
     }
 
     /// <summary>
@@ -117,6 +118,11 @@ namespace Amporis.Xamarin.Forms.ColorPicker
                     SetColumnSpan(this, grid.ColumnDefinitions.Count);
             }
 
+            var page = Settings.HideNavigationBar ? ColorPickerUtils.GetRootParent<ContentPage>(parent) : null;
+            bool hasNavBar = page == null ? false : NavigationPage.GetHasNavigationBar(page);
+            if (hasNavBar)
+                NavigationPage.SetHasNavigationBar(page, false);
+
             // Display animation
             uint animLength = 400;
             if (Settings.DialogAnimation)
@@ -141,6 +147,10 @@ namespace Amporis.Xamarin.Forms.ColorPicker
                 await MainFrame.ScaleTo(0.75, animLength, Easing.SinIn);
             }
             parent.Children.Remove(this);
+
+            if (hasNavBar)
+                NavigationPage.SetHasNavigationBar(page, true);
+
             // Returning the result
             return result == btnOk?.Text;
         }
@@ -295,7 +305,7 @@ namespace Amporis.Xamarin.Forms.ColorPicker
             bool result = await dlg.ShowDialog(parent);
             if (result)
                 return dlg.edtEditor.Text;
-            return String.Empty;
+            return null;
         }
 
         protected override void OnShow()

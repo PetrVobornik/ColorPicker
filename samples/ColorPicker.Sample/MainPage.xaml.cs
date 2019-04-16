@@ -28,7 +28,7 @@ namespace ColorPicker.Sample
         private async void BInputDialog_Clicked(object sender, EventArgs e)
         {
             var btn = (Button)sender;
-            btn.Text = await InputDialog.Show(gMain, "Caption", "New caption", btn.Text);
+            btn.Text = await InputDialog.Show(gMain, "Caption", "New caption", btn.Text) ?? btn.Text;
         }
     }
 }

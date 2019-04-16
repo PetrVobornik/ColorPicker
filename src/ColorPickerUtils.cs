@@ -46,7 +46,7 @@ namespace Amporis.Xamarin.Forms.ColorPicker
         /// <typeparam name="T">Searched type of the parent container (type Layout or its subtype)</typeparam>
         /// <param name="view">Start element for searching of the parent container</param>
         /// <returns>Farthest parent container of an element (T type or its subtype)</returns>
-        public static T GetRootParent<T>(Element view) where T : Layout
+        public static T GetRootParent<T>(Element view) where T : Element
         {
             var parent = view;
             T result = parent as T;

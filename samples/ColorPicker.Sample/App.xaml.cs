@@ -13,7 +13,7 @@ namespace ColorPicker.Sample
 		{
 			InitializeComponent();
 
-			MainPage = new ColorPicker.Sample.MainPage();
+			MainPage = new NavigationPage(new ColorPicker.Sample.MainPage());
 		}
 
 		protected override void OnStart ()

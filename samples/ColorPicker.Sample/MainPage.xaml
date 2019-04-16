@@ -6,7 +6,7 @@
              x:Class="ColorPicker.Sample.MainPage"
              Title="ColorPicker Sample">
     <Grid x:Name="gMain">
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
             <Label Text="ColorPickerEntry" Margin="0,0,0,10" />
             <cp:ColorPickerEntry WidthRequest="150" HorizontalOptions="Start" 
                                  DialogTitle="ColorPickerDialog" Color="{Binding EditedColor}" />   
