@@ -48,6 +48,11 @@ namespace Amporis.Xamarin.Forms.ColorPicker
         private ColorValue ColorVal = new ColorValue();
 
         /// <summary>
+        /// Gets the size of the font for the color entry text.
+        /// </summary>
+        public double FontSize { get => eColor.FontSize; set => eColor.FontSize = value; }
+      
+        /// <summary>
         /// Editor (Entry) where a color is edited as hexadecimal string
         /// </summary>
         public Entry Editor { get => eColor; }
